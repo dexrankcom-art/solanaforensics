@@ -1,0 +1,728 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="SolanaForensics — On-Chain Intelligence for Solana">
+
+  <!-- HERO -->
+  <section class="hero grid-bg">
+    <div class="hero-glow"></div>
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <div class="tag">// Telegram Forensic Intelligence Bot</div>
+        <h1 class="hero-title">
+          Track. Trace.<br/>
+          <span class="accent glow-text">Expose.</span>
+        </h1>
+        <p class="hero-sub">
+          A Telegram bot for Solana forensic investigations. Trace wallets, map CEX cashouts, and generate law-enforcement-ready reports — powered by Clavestra Intel.
+        </p>
+        <div class="hero-actions">
+          <a href="https://t.me/SolanaForensicsBot" target="_blank" rel="noopener" class="btn btn-primary">Start on Telegram →</a>
+          <a href="/features" class="btn btn-outline">See Features</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-val mono">500M+</span>
+            <span class="stat-label">Transactions Indexed</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-val mono">Real-time</span>
+            <span class="stat-label">Wallet Monitoring</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-val mono">LE-Ready</span>
+            <span class="stat-label">Report Formats</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="terminal" id="hero-terminal">
+          <div class="terminal-bar">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="terminal-title mono">solana_forensics — wallet_trace</span>
+          </div>
+          <div class="terminal-body mono" id="terminal-output">
+            <p class="cursor mono">█</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <div class="tag">// How It Works</div>
+        <h2>Forensic intelligence via <span class="accent">Telegram.</span></h2>
+        <p class="section-sub">No dashboards. No logins. Just open Telegram and start investigating.</p>
+      </div>
+
+      <div class="hiw-steps">
+        <div class="hiw-step">
+          <span class="hiw-num mono">01</span>
+          <h3>Start a chat</h3>
+          <p>Open @SolanaForensicsBot on Telegram. No account setup, no onboarding flow.</p>
+        </div>
+        <div class="hiw-connector"></div>
+        <div class="hiw-step">
+          <span class="hiw-num mono">02</span>
+          <h3>Ask your question</h3>
+          <p>Send a wallet address, token mint, or investigation query in plain language.</p>
+        </div>
+        <div class="hiw-connector"></div>
+        <div class="hiw-step">
+          <span class="hiw-num mono">03</span>
+          <h3>Get forensic intelligence</h3>
+          <p>Receive structured analysis: risk scores, entity labels, fund flows, and LE-ready exports.</p>
+        </div>
+      </div>
+
+      <div class="hiw-demo">
+        <div class="chat-window">
+          <div class="chat-header mono">
+            <span class="chat-dot"></span>
+            SolanaForensicsBot
+          </div>
+          <div class="chat-messages">
+            <div class="chat-msg user">
+              <div class="chat-bubble user-bubble">Check wallet 9xTz...mK4p</div>
+              <span class="chat-time mono">14:32</span>
+            </div>
+            <div class="chat-msg bot">
+              <div class="chat-bubble bot-bubble">
+                <div class="bot-response mono">
+                  <p class="bot-header">WALLET REPORT: 9xTz...mK4p</p>
+                  <p>━━━━━━━━━━━━━━━━━━━━━━━━</p>
+                  <p>Risk Score: &nbsp;&nbsp;&nbsp;&nbsp;<span class="t-danger">94/100 [CRITICAL]</span></p>
+                  <p>Entity: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unknown — flagged cluster</p>
+                  <p>Funding Source: Binance withdrawal (3 hops)</p>
+                  <p>CEX Endpoints: &nbsp;Kraken deposit (2 confirmed)</p>
+                  <p>Depositors: &nbsp;&nbsp;&nbsp;847 wallets identified</p>
+                  <p>Outcome: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-danger">94% losses > 80%</span></p>
+                  <p>━━━━━━━━━━━━━━━━━━━━━━━━</p>
+                  <p class="t-ok">Recommended: Freeze request — Kraken EU</p>
+                </div>
+              </div>
+              <span class="chat-time mono">14:32</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTEXT BAR -->
+  <section class="context-bar">
+    <div class="container">
+      <p class="context-label mono">// Built for investigation professionals</p>
+      <div class="context-items">
+        <span>Law Enforcement</span>
+        <span class="sep">—</span>
+        <span>Financial Intelligence Units</span>
+        <span class="sep">—</span>
+        <span>Compliance Teams</span>
+        <span class="sep">—</span>
+        <span>Forensic Investigators</span>
+        <span class="sep">—</span>
+        <span>Legal Counsel</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES PREVIEW -->
+  <section class="features-preview">
+    <div class="container">
+      <div class="section-header">
+        <div class="tag">// Core Capabilities</div>
+        <h2>Everything you need to <br/><span class="accent">follow the money.</span></h2>
+        <p class="section-sub">Purpose-built Telegram bot modules for Solana chain analysis, from wallet tracing to automated report generation.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="card feature-card">
+          <div class="feature-icon">◈</div>
+          <h3>Wallet Investigation</h3>
+          <p>Ecosystem mapping, entity resolution via Arkham and Helius, depositor outcome analysis, and multi-hop fund flow tracing.</p>
+          <a href="/features#wallet-investigation" class="feature-link mono">Explore →</a>
+        </div>
+        <div class="card feature-card">
+          <div class="feature-icon">◉</div>
+          <h3>Token Tracing</h3>
+          <p>SPL token flow analysis, mint/burn tracking, cross-token movement mapping, and wash trading detection.</p>
+          <a href="/features#token-tracing" class="feature-link mono">Explore →</a>
+        </div>
+        <div class="card feature-card">
+          <div class="feature-icon">◈</div>
+          <h3>Custodial Platform Audits</h3>
+          <p>6-point fraud checklist covering yield math, depositor outcomes, insider extraction, solvency, and predecessor operations.</p>
+          <a href="/features#custodial-audits" class="feature-link mono">Explore →</a>
+        </div>
+        <div class="card feature-card">
+          <div class="feature-icon">◉</div>
+          <h3>CEX Cashout Mapping</h3>
+          <p>Exchange deposit address identification across 10+ major CEXs with evidence packaging for freeze and seizure requests.</p>
+          <a href="/features#cex-cashout" class="feature-link mono">Explore →</a>
+        </div>
+        <div class="card feature-card">
+          <div class="feature-icon">◈</div>
+          <h3>LE Report Generation</h3>
+          <p>PDF forensic reports — police-ready, court-ready. On-chain evidence citations, timeline reconstruction, and recommended actions.</p>
+          <a href="/features#le-reports" class="feature-link mono">Explore →</a>
+        </div>
+        <div class="card feature-card">
+          <div class="feature-icon">◉</div>
+          <h3>Cross-chain Intelligence</h3>
+          <p>Bridge transaction tracking across Solana and other chains. Build unified suspect profiles from multi-chain activity.</p>
+          <a href="/features#cross-chain" class="feature-link mono">Explore →</a>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top: 3rem;">
+        <a href="/features" class="btn btn-outline">View All Features</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- USE CASES -->
+  <section class="use-cases-preview" style="background: var(--bg-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <div class="section-header">
+        <div class="tag">// Applications</div>
+        <h2>Deployed across <span class="accent">investigation verticals.</span></h2>
+      </div>
+      <div class="use-cases-grid">
+        <a href="/use-cases#law-enforcement" class="use-case-card card">
+          <span class="uc-num mono">01</span>
+          <h3>Law Enforcement</h3>
+          <p>Equip investigators with court-admissible forensic reports and real-time wallet surveillance tools.</p>
+        </a>
+        <a href="/use-cases#compliance" class="use-case-card card">
+          <span class="uc-num mono">02</span>
+          <h3>Compliance & AML</h3>
+          <p>Automate suspicious activity detection and generate FIAU-ready reports for regulatory submissions.</p>
+        </a>
+        <a href="/use-cases#fraud" class="use-case-card card">
+          <span class="uc-num mono">03</span>
+          <h3>Fraud Investigation</h3>
+          <p>Reconstruct complex fraud schemes, identify beneficiaries, and trace asset flows across protocols.</p>
+        </a>
+        <a href="/use-cases#legal" class="use-case-card card">
+          <span class="uc-num mono">04</span>
+          <h3>Legal & Asset Recovery</h3>
+          <p>Support litigation with blockchain evidence packages and identify recoverable assets for victims.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container cta-inner">
+      <div class="cta-glow"></div>
+      <div class="tag">// Start Investigating</div>
+      <h2>Start investigating on Telegram.</h2>
+      <p>Open @SolanaForensicsBot and run your first investigation in under 60 seconds.</p>
+      <a href="https://t.me/SolanaForensicsBot" target="_blank" rel="noopener" class="btn btn-primary">Start Investigating →</a>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<script>
+  const lines = [
+    { text: '$ trace --wallet 9xTz...mK4p', delay: 0, cls: 'cmd' },
+    { text: 'Initializing trace engine...', delay: 600, cls: 'dim' },
+    { text: '✓ Connected to Helius RPC', delay: 1200, cls: 'ok' },
+    { text: '✓ Loaded 1,247 transactions', delay: 1800, cls: 'ok' },
+    { text: '✓ Cross-referencing Arkham clusters', delay: 2400, cls: 'ok' },
+    { text: '', delay: 3000, cls: '' },
+    { text: '⚠ HIGH RISK wallet detected', delay: 3200, cls: 'warn' },
+    { text: '— Linked to 3 flagged entities', delay: 3600, cls: 'dim' },
+    { text: '— $842,000 extracted (6 hops)', delay: 4000, cls: 'dim' },
+    { text: '— Last active: 2h ago', delay: 4400, cls: 'dim' },
+    { text: '', delay: 4800, cls: '' },
+    { text: '$ export --format law_enforcement_pdf', delay: 5000, cls: 'cmd' },
+    { text: '✓ Report generated → report_001.pdf', delay: 5800, cls: 'ok' },
+  ];
+
+  const classMap: Record<string, string> = {
+    cmd: 't-cmd',
+    dim: 't-dim',
+    ok: 't-ok',
+    warn: 't-warn',
+  };
+
+  let hasPlayed = false;
+
+  function runAnimation() {
+    if (hasPlayed) return;
+    hasPlayed = true;
+
+    const output = document.getElementById('terminal-output');
+    if (!output) return;
+    output.innerHTML = '';
+
+    lines.forEach(({ text, delay, cls }) => {
+      setTimeout(() => {
+        const p = document.createElement('p');
+        if (text === '') {
+          p.innerHTML = '&nbsp;';
+        } else {
+          const className = classMap[cls] || '';
+          if (cls === 'cmd') {
+            const parts = text.split(' ');
+            const dollar = parts.shift();
+            p.innerHTML = `<span class="t-dim">${dollar}</span> <span class="t-cmd">${parts.join(' ')}</span>`;
+          } else if (cls === 'warn') {
+            p.innerHTML = `<span class="t-warn">⚠</span> <span class="t-danger">${text.replace('⚠ ', '')}</span>`;
+          } else if (cls === 'ok') {
+            p.innerHTML = `<span class="t-ok">✓</span> <span>${text.replace('✓ ', '')}</span>`;
+          } else {
+            p.className = className;
+            p.textContent = text;
+          }
+        }
+        output.appendChild(p);
+        output.scrollTop = output.scrollHeight;
+      }, delay);
+    });
+
+    setTimeout(() => {
+      const cursor = document.createElement('p');
+      cursor.className = 'cursor mono';
+      cursor.textContent = '█';
+      output?.appendChild(cursor);
+    }, 6200);
+  }
+
+  const terminal = document.getElementById('hero-terminal');
+  if (terminal) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          runAnimation();
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+    observer.observe(terminal);
+  }
+</script>
+
+<style>
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 70px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-glow {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(ellipse, rgba(0, 102, 255, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.hero-content { z-index: 1; }
+
+.hero-title {
+  font-size: clamp(3.5rem, 6vw, 5.5rem);
+  margin-bottom: 1.5rem;
+  line-height: 1;
+}
+
+.hero-title .accent { color: var(--accent); }
+
+.hero-sub {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  max-width: 480px;
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3.5rem;
+  flex-wrap: wrap;
+}
+
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.stat { display: flex; flex-direction: column; gap: 0.25rem; }
+.stat-val { font-size: 1.3rem; color: var(--accent); font-weight: 700; }
+.stat-label { font-size: 0.78rem; color: var(--text-dim); letter-spacing: 0.05em; }
+.stat-divider { width: 1px; height: 40px; background: var(--border); }
+
+/* TERMINAL */
+.terminal {
+  background: #060b14;
+  border: 1px solid var(--border-glow);
+  box-shadow: 0 0 60px rgba(0, 102, 255, 0.1), inset 0 0 30px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.terminal-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: #080e1c;
+  border-bottom: 1px solid var(--border);
+}
+
+.dot {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+}
+.dot.red { background: #ff5f57; }
+.dot.yellow { background: #febc2e; }
+.dot.green { background: #28c840; }
+
+.terminal-title {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  margin-left: 0.5rem;
+}
+
+.terminal-body {
+  padding: 1.5rem;
+  font-size: 0.82rem;
+  line-height: 2;
+  min-height: 320px;
+}
+.terminal-body p { margin: 0; }
+
+.t-dim { color: var(--text-dim); }
+.t-cmd { color: var(--accent); }
+.t-addr { color: #7dd3fc; }
+.t-ok { color: var(--success); }
+.t-warn { color: #fbbf24; }
+.t-danger { color: var(--danger); font-weight: 700; }
+
+.cursor {
+  color: var(--accent);
+  animation: blink 1s step-end infinite;
+}
+
+/* HOW IT WORKS */
+.how-it-works {
+  padding: 7rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.hiw-steps {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 4rem;
+}
+
+.hiw-step {
+  flex: 1;
+  max-width: 280px;
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+.hiw-num {
+  font-size: 0.75rem;
+  color: var(--accent);
+  letter-spacing: 0.15em;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.hiw-step h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.hiw-step p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+.hiw-connector {
+  width: 60px;
+  height: 1px;
+  background: var(--border-glow);
+  margin-top: 3.5rem;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.hiw-connector::after {
+  content: '→';
+  position: absolute;
+  right: -4px;
+  top: -10px;
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+/* CHAT DEMO */
+.hiw-demo {
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.chat-window {
+  background: #060b14;
+  border: 1px solid var(--border-glow);
+  overflow: hidden;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.875rem 1.25rem;
+  background: #080e1c;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.chat-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--success);
+  flex-shrink: 0;
+}
+
+.chat-messages {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.chat-msg {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.chat-msg.user { align-items: flex-end; }
+.chat-msg.bot { align-items: flex-start; }
+
+.chat-bubble {
+  max-width: 90%;
+  padding: 0.875rem 1.125rem;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.user-bubble {
+  background: rgba(0, 212, 255, 0.1);
+  border: 1px solid rgba(0, 212, 255, 0.25);
+  color: var(--text);
+  font-family: var(--sans);
+}
+
+.bot-bubble {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+}
+
+.bot-response {
+  font-size: 0.78rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+.bot-response p { margin: 0; }
+.bot-header { color: var(--accent); font-weight: 700; }
+
+.chat-time {
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+}
+
+/* CONTEXT BAR */
+.context-bar {
+  padding: 2rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-2);
+}
+
+.context-label {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.context-items {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+.context-items .sep { color: var(--text-dim); }
+
+/* FEATURES */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5px;
+  background: var(--border);
+}
+
+.feature-card {
+  background: var(--bg);
+  padding: 2.5rem 2rem;
+}
+
+.feature-icon {
+  font-size: 1.5rem;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+  opacity: 0.8;
+}
+
+.feature-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+}
+
+.feature-card p {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.feature-link {
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+}
+.feature-link:hover { color: #fff; }
+
+.section-sub {
+  color: var(--text-muted);
+  font-size: 1rem;
+  max-width: 540px;
+  margin-top: 1rem;
+  line-height: 1.7;
+}
+
+/* USE CASES */
+.use-cases-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5px;
+  background: var(--border);
+}
+
+.use-case-card {
+  background: var(--bg-2);
+  padding: 2.5rem 1.75rem;
+  text-decoration: none;
+  color: var(--text);
+  display: block;
+}
+
+.uc-num {
+  font-size: 0.75rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: 1.25rem;
+}
+
+.use-case-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.use-case-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* CTA */
+.cta-section {
+  background: var(--bg-2);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-inner {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 300px;
+  background: radial-gradient(ellipse, rgba(0, 212, 255, 0.08) 0%, transparent 70%);
+}
+
+.cta-inner h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1.25rem; }
+.cta-inner p { color: var(--text-muted); font-size: 1rem; margin-bottom: 2.5rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+
+@media (max-width: 1024px) {
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+  .use-cases-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-visual { display: none; }
+  .features-grid { grid-template-columns: 1fr; }
+  .use-cases-grid { grid-template-columns: 1fr; }
+  .hero-stats { gap: 1.25rem; flex-wrap: wrap; }
+  .hiw-steps { flex-direction: column; align-items: center; }
+  .hiw-connector { width: 1px; height: 40px; margin: 0; }
+  .hiw-connector::after { right: -12px; top: auto; bottom: -4px; }
+}
+</style>

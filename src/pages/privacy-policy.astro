@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const updated = "1 March 2025";
+---
+
+<BaseLayout title="Privacy Policy — SolanaForensics" description="Privacy policy for SolanaForensics.com">
+
+  <div style="height: 70px;"></div>
+
+  <section class="page-hero" style="border-bottom: 1px solid var(--border); padding: 5rem 0 4rem;">
+    <div class="container">
+      <div class="tag">// Legal</div>
+      <h1>Privacy Policy</h1>
+      <p class="mono" style="color: var(--text-dim); font-size: 0.78rem; margin-top: 1rem;">Last updated: {updated}</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container legal-body">
+      <h2>1. Introduction</h2>
+      <p>SolanaForensics ("we", "our", "us"), operated by Clavestra Intel, is committed to protecting the privacy of individuals who interact with this website. This Privacy Policy explains what information we collect, how we use it, and your rights in relation to it.</p>
+
+      <h2>2. Information We Collect</h2>
+      <p>We collect information you provide directly when you submit the access request form, including your name, email address, organisation, and professional role. We may also collect standard server log data including IP addresses, browser type, and pages visited for security and operational purposes.</p>
+
+      <h2>3. How We Use Your Information</h2>
+      <p>Information submitted via the contact form is used solely to evaluate and process your access request. We do not sell, rent, or share your personal information with third parties except where required by law or with your explicit consent.</p>
+
+      <h2>4. Data Retention</h2>
+      <p>We retain submitted access request information for as long as necessary to manage your access relationship with SolanaForensics, or for a maximum of 3 years if no access relationship is established.</p>
+
+      <h2>5. Cookies</h2>
+      <p>This website uses only essential technical cookies necessary for site operation. We do not use tracking cookies or third-party analytics cookies.</p>
+
+      <h2>6. Your Rights</h2>
+      <p>You have the right to access, correct, or request deletion of personal information we hold about you. To exercise these rights, contact us via the contact page.</p>
+
+      <h2>7. Security</h2>
+      <p>We implement appropriate technical and organisational measures to protect personal information against unauthorised access, alteration, disclosure, or destruction.</p>
+
+      <h2>8. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. The updated date at the top of this page reflects the most recent revision.</p>
+
+      <h2>9. Contact</h2>
+      <p>For privacy-related queries, please contact us via the <a href="/contact">contact page</a>.</p>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+.legal-body {
+  max-width: 760px;
+  padding: 4rem 0 6rem;
+}
+.legal-body h2 {
+  font-size: 1.1rem;
+  margin: 2.5rem 0 0.875rem;
+  color: var(--text);
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+.legal-body h2:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+.legal-body p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+</style>

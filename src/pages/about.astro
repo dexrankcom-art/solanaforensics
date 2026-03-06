@@ -1,0 +1,156 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About — SolanaForensics" description="SolanaForensics is a Clavestra Intel product providing forensic-grade blockchain intelligence for the Solana network.">
+
+  <div style="height: 70px;"></div>
+
+  <section class="page-hero grid-bg">
+    <div class="container">
+      <div class="tag">// About</div>
+      <h1>Built by investigators, <span class="accent">for investigators.</span></h1>
+      <p class="page-hero-sub">SolanaForensics emerged from real-world blockchain forensic investigation work — not a product designed in a boardroom.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container about-grid">
+      <div class="about-text">
+        <h2>Our Background</h2>
+        <p>SolanaForensics emerged from active forensic investigations into Solana-based fraud and investment scams. The tools were forged in the field — not built speculatively. Every capability was developed to solve a real investigative problem: tracing fund flows across complex DeFi interactions, reverse-engineering custodial platforms to expose hidden admin capabilities, and generating law-enforcement-ready reports that meet evidential standards.</p>
+        <p>Now delivered as a Telegram bot, SolanaForensics gives investigators direct access to forensic intelligence without dashboards or onboarding. The bot is informed by work submitted to law enforcement agencies and financial intelligence units. Every module reflects an actual investigative need encountered in the field.</p>
+        <h2 style="margin-top: 3rem;">Clavestra Intel</h2>
+        <p>SolanaForensics is a product of <a href="https://clavestra.com" target="_blank" rel="noopener"><strong style="color:var(--accent)">Clavestra Intel</strong></a>, a blockchain intelligence operation focused on on-chain forensics and financial crime investigation on distributed ledger networks. Clavestra Intel specialises in complex, multi-jurisdictional cases involving Solana-native protocols, DeFi platforms, and cross-chain asset flows.</p>
+        <p>Our work spans blockchain forensics, corporate registry research, smart contract analysis, and the production of professional intelligence reports for law enforcement and legal proceedings.</p>
+      </div>
+      <div class="about-sidebar">
+        <div class="card sidebar-card">
+          <div class="tag" style="font-size:0.65rem">// Focus Areas</div>
+          <ul class="sidebar-list">
+            <li>Solana blockchain forensics</li>
+            <li>DeFi fraud investigation</li>
+            <li>Smart contract reverse engineering</li>
+            <li>Cross-chain asset tracing</li>
+            <li>Law enforcement report production</li>
+            <li>FIAU & regulatory submissions</li>
+          </ul>
+        </div>
+        <div class="card sidebar-card" style="margin-top: 1.5rem;">
+          <div class="tag" style="font-size:0.65rem">// Integrations</div>
+          <ul class="sidebar-list">
+            <li>Helius RPC & Webhooks</li>
+            <li>Arkham Intelligence</li>
+            <li>Solscan Pro</li>
+            <li>CoinGecko API</li>
+            <li>Telegram Alerts</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--bg-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <div class="tag">// Principles</div>
+      <div class="principles-grid">
+        <div>
+          <h3>Evidence First</h3>
+          <p>Every output is designed to meet evidential standards. We don't produce assessments — we produce documented, verifiable forensic records.</p>
+        </div>
+        <div>
+          <h3>No Sensationalism</h3>
+          <p>Blockchain forensics requires precision and restraint. We document what the data shows, not what makes a good headline.</p>
+        </div>
+        <div>
+          <h3>Investigator-Led</h3>
+          <p>Our tools are built around how real investigators work — not around product metrics or engagement funnels.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="text-align: center; padding: 6rem 0;">
+    <div class="container">
+      <div class="tag">// Work With Us</div>
+      <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1.25rem;">Get in touch.</h2>
+      <p style="color: var(--text-muted); max-width: 480px; margin: 0 auto 2.5rem;">SolanaForensics is available to verified law enforcement, compliance professionals, and licensed investigators.</p>
+      <a href="/contact" class="btn btn-primary">Contact Us →</a>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+.page-hero { padding: 6rem 0 5rem; border-bottom: 1px solid var(--border); }
+.page-hero h1 { font-size: clamp(2.5rem, 4vw, 4rem); max-width: 700px; margin-bottom: 1.25rem; }
+.page-hero-sub { color: var(--text-muted); font-size: 1.05rem; max-width: 540px; line-height: 1.7; }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 5rem;
+  padding: 5rem 0;
+}
+
+.about-text h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.about-text p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+
+.sidebar-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  margin-top: 1rem;
+}
+
+.sidebar-list li {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.sidebar-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+}
+
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+  margin-top: 2rem;
+}
+
+.principles-grid h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.875rem;
+  color: var(--accent);
+}
+
+.principles-grid p {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .principles-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+</style>

@@ -1,0 +1,168 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact — SolanaForensics" description="Request access to SolanaForensics or get in touch with the Clavestra Intel team.">
+
+  <div style="height: 70px;"></div>
+
+  <section class="page-hero grid-bg">
+    <div class="container">
+      <div class="tag">// Contact</div>
+      <h1>Request <span class="accent">Access.</span></h1>
+      <p class="page-hero-sub">SolanaForensics is available to verified law enforcement, licensed investigators, and compliance professionals. Complete the form below to begin the access process.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container contact-grid">
+      <div class="contact-form-wrap">
+        <div class="tag" style="font-size:0.65rem">// Access Request Form</div>
+        <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact" />
+          <p style="display:none"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label mono">Full Name *</label>
+              <input type="text" name="name" required class="form-input" placeholder="Your name" />
+            </div>
+            <div class="form-group">
+              <label class="form-label mono">Organisation *</label>
+              <input type="text" name="organisation" required class="form-input" placeholder="Agency / Company" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label mono">Email *</label>
+            <input type="email" name="email" required class="form-input" placeholder="your@organisation.com" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label mono">Professional Role *</label>
+            <select name="role" required class="form-input form-select">
+              <option value="" disabled selected>Select your role</option>
+              <option>Law Enforcement Officer</option>
+              <option>Financial Intelligence Analyst</option>
+              <option>Compliance Professional</option>
+              <option>Licensed Investigator</option>
+              <option>Legal Counsel</option>
+              <option>Forensic Accountant</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label mono">Investigation Context</label>
+            <textarea name="context" class="form-input form-textarea" rows="5" placeholder="Briefly describe your investigative context or use case..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+            Submit Request →
+          </button>
+
+          <p class="form-note mono">All submissions are reviewed by the Clavestra Intel team. We respond within 2 business days.</p>
+        </form>
+      </div>
+
+      <div class="contact-sidebar">
+        <div class="card" style="padding: 2rem; margin-bottom: 1.5rem;">
+          <div class="tag" style="font-size: 0.65rem;">// Verification</div>
+          <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.7; margin-top: 0.5rem;">
+            Access to SolanaForensics requires professional verification. We may request official credentials, badge numbers, or professional licence details during the review process.
+          </p>
+        </div>
+        <div class="card" style="padding: 2rem; margin-bottom: 1.5rem;">
+          <div class="tag" style="font-size: 0.65rem;">// Direct Contact</div>
+          <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.7; margin-top: 0.5rem;">
+            For urgent law enforcement matters, contact Clavestra Intel directly. Priority response available for active criminal investigations.
+          </p>
+        </div>
+        <div class="card" style="padding: 2rem;">
+          <div class="tag" style="font-size: 0.65rem;">// Powered By</div>
+          <p style="color: var(--accent); font-family: var(--mono); font-size: 0.88rem; margin-top: 0.75rem;">Clavestra Intel</p>
+          <p style="color: var(--text-dim); font-size: 0.8rem; margin-top: 0.25rem; font-family: var(--mono);">Blockchain Intelligence Operations</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+.page-hero { padding: 6rem 0 5rem; border-bottom: 1px solid var(--border); }
+.page-hero h1 { font-size: clamp(2.5rem, 4vw, 4rem); max-width: 700px; margin-bottom: 1.25rem; }
+.page-hero-sub { color: var(--text-muted); font-size: 1.05rem; max-width: 600px; line-height: 1.7; }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 5rem;
+  padding: 5rem 0;
+  align-items: start;
+}
+
+.contact-form-wrap { }
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 0.5rem;
+}
+
+.form-input {
+  width: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.875rem 1rem;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  appearance: none;
+}
+
+.form-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.08);
+}
+
+.form-input::placeholder { color: var(--text-dim); }
+
+.form-select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7a99' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+.form-textarea { resize: vertical; min-height: 140px; }
+
+.form-note {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+  margin-top: 1.25rem;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}
+</style>

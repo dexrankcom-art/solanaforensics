@@ -1,0 +1,128 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">
+          <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+            <polygon points="14,2 26,8 26,20 14,26 2,20 2,8" stroke="#00d4ff" stroke-width="1.5" fill="none"/>
+            <circle cx="14" cy="14" r="3" fill="#00d4ff"/>
+          </svg>
+          <span>Solana<span style="color:var(--accent)">Forensics</span></span>
+        </a>
+        <p class="footer-tagline">Forensic-grade on-chain intelligence for the Solana blockchain.</p>
+        <p class="footer-powered">Powered by <span class="accent">Clavestra Intel</span></p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <a href="/features">Features</a>
+        <a href="/use-cases">Use Cases</a>
+        <a href="/blog">Reports</a>
+        <a href="/contact">Request Access</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
+        <a href="/disclaimer">Disclaimer</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span class="mono" style="color: var(--text-dim); font-size: 0.75rem;">
+        © {year} SolanaForensics. All rights reserved.
+      </span>
+      <span class="mono" style="color: var(--text-dim); font-size: 0.75rem;">
+        A <span style="color: var(--accent)">Clavestra Intel</span> product.
+      </span>
+    </div>
+  </div>
+</footer>
+
+<style>
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 5rem 0 2rem;
+  margin-top: 4rem;
+  background: var(--bg-2);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.footer-tagline {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  max-width: 280px;
+}
+
+.footer-powered {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+}
+.footer-powered .accent { color: var(--accent); }
+
+.footer-col h4 {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 1.25rem;
+  font-weight: 400;
+}
+
+.footer-col a {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.65rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--accent); }
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+}
+</style>

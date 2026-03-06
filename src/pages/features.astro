@@ -1,0 +1,235 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Features — SolanaForensics" description="Forensic-grade Solana blockchain analysis modules delivered via Telegram. Wallet investigation, token tracing, custodial audits, CEX cashout mapping, and LE reports.">
+
+  <div style="height: 70px;"></div>
+
+  <section class="page-hero grid-bg">
+    <div class="container">
+      <div class="tag">// Bot Modules</div>
+      <h1>Forensic tools delivered via <span class="accent">Telegram.</span></h1>
+      <p class="page-hero-sub">Five investigation modules accessible through @SolanaForensicsBot. Ask a question, get forensic intelligence.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+
+      <div class="feature-block" id="wallet-investigation">
+        <div class="fb-header">
+          <span class="fb-num mono">// 01</span>
+          <h2>Wallet Investigation</h2>
+        </div>
+        <div class="fb-body">
+          <div class="fb-desc">
+            <p>Send a wallet address to the bot and receive a complete ecosystem map: hot wallets, staging addresses, intermediaries, and CEX endpoints. The bot resolves entities through Arkham, Solscan, and Helius, then analyses depositor outcomes to determine whether a wallet is connected to fraud.</p>
+            <p>Multi-hop fund flow tracing follows assets regardless of how many intermediate wallets are used, exposing the full path from source to final destination.</p>
+            <ul class="feature-list">
+              <li>Ecosystem mapping (hot wallets, staging, intermediaries, CEX endpoints)</li>
+              <li>Entity resolution via Arkham, Solscan, Helius</li>
+              <li>Depositor outcome analysis</li>
+              <li>Multi-hop fund flow tracing</li>
+            </ul>
+          </div>
+          <div class="fb-visual">
+            <div class="code-block mono">
+<pre>WALLET REPORT: 9xTz...mK4p
+━━━━━━━━━━━━━━━━━━━━━━━━
+Risk Score:     <span style="color:#ff3366">94/100 [CRITICAL]</span>
+Entity:         Unknown — flagged cluster
+Funding Source: Binance withdrawal (3 hops)
+CEX Endpoints:  Kraken deposit (2 confirmed)
+Depositors:     847 wallets identified
+Outcome:        <span style="color:#ff3366">94% losses > 80%</span>
+━━━━━━━━━━━━━━━━━━━━━━━━
+<span style="color:#00ff88">Recommended: Freeze request — Kraken EU</span></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-block" id="token-tracing">
+        <div class="fb-header">
+          <span class="fb-num mono">// 02</span>
+          <h2>Token Tracing</h2>
+        </div>
+        <div class="fb-body">
+          <div class="fb-desc">
+            <p>Track the movement of any SPL token — USDC, USDT, or custom mints — across the Solana network. The bot analyses token mint and burn activity to identify manipulation, and maps cross-token movement patterns where SOL converts to stablecoins before hitting a CEX.</p>
+            <p>Circular flow detection identifies wash trading patterns designed to create the illusion of legitimate volume or obscure the origin of funds.</p>
+            <ul class="feature-list">
+              <li>SPL token flow analysis (USDC, USDT, any SPL token)</li>
+              <li>Token mint/burn activity tracking</li>
+              <li>Cross-token movement (SOL → stables → CEX)</li>
+              <li>Wash trading &amp; circular flow detection</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-block" id="custodial-audits">
+        <div class="fb-header">
+          <span class="fb-num mono">// 03</span>
+          <h2>Custodial Platform Audits</h2>
+        </div>
+        <div class="fb-body">
+          <div class="fb-desc">
+            <p>Submit a custodial platform's wallet infrastructure and the bot runs a 6-point fraud checklist: yield mathematics viability, depositor outcome analysis, insider extraction patterns, on-chain solvency verification, CEX cashout mapping, and predecessor operation detection.</p>
+            <p>The bot also analyses DeFi protocol interactions — Orca, Jupiter, Raydium — to separate legitimate activity from facade operations designed to create the appearance of trading.</p>
+            <ul class="feature-list">
+              <li>6-point fraud checklist: yield math, depositor outcomes, insider extraction, solvency, CEX cashouts, predecessor ops</li>
+              <li>DeFi protocol interaction analysis (Orca, Jupiter, Raydium)</li>
+              <li>Legitimate activity vs facade separation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-block" id="cex-cashout">
+        <div class="fb-header">
+          <span class="fb-num mono">// 04</span>
+          <h2>CEX Cashout Mapping</h2>
+        </div>
+        <div class="fb-body">
+          <div class="fb-desc">
+            <p>Identify exchange deposit addresses across 10+ major centralised exchanges. The bot maps the intermediary chain from suspect wallets to known exchange deposit addresses, documenting every hop for evidence packaging.</p>
+            <p>Output includes structured evidence packages ready for freeze and seizure requests to exchange compliance departments, with full transaction citations and intermediary documentation.</p>
+            <ul class="feature-list">
+              <li>Exchange deposit address identification across 10+ major CEXs</li>
+              <li>Binance, Kraken, OKX, Bybit, Coinbase, KuCoin, Gate.io, HTX, MEXC, Bitget</li>
+              <li>Evidence packaging for freeze/seizure requests</li>
+              <li>Intermediary chain documentation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-block" id="le-reports">
+        <div class="fb-header">
+          <span class="fb-num mono">// 05</span>
+          <h2>Law Enforcement Reports</h2>
+        </div>
+        <div class="fb-body">
+          <div class="fb-desc">
+            <p>Generate PDF forensic reports formatted for police submissions and court proceedings. Each report includes on-chain evidence citations, complete timeline reconstruction, and recommended enforcement actions including which jurisdictions and exchanges to target.</p>
+            <p>Reports are designed to be attached directly to criminal complaints, SAR filings, or civil asset recovery proceedings without additional formatting.</p>
+            <ul class="feature-list">
+              <li>PDF forensic reports — police-ready, court-ready</li>
+              <li>On-chain evidence citations</li>
+              <li>Timeline reconstruction</li>
+              <li>Recommended actions (freeze requests, blacklist addresses, jurisdictions)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta-section" style="background: var(--bg-2); border-top: 1px solid var(--border);">
+    <div class="container cta-inner">
+      <div class="tag">// Start Investigating</div>
+      <h2>Try SolanaForensics on Telegram.</h2>
+      <p>Open @SolanaForensicsBot and send a wallet address to get started.</p>
+      <a href="https://t.me/SolanaForensicsBot" target="_blank" rel="noopener" class="btn btn-primary">Start on Telegram →</a>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+.page-hero {
+  padding: 6rem 0 5rem;
+  border-bottom: 1px solid var(--border);
+}
+.page-hero h1 { font-size: clamp(2.5rem, 4vw, 4rem); max-width: 700px; margin-bottom: 1.25rem; }
+.page-hero-sub { color: var(--text-muted); font-size: 1.05rem; max-width: 540px; line-height: 1.7; }
+
+.feature-block {
+  padding: 4rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.feature-block:last-child { border-bottom: none; }
+
+.fb-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.fb-num {
+  font-size: 0.8rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+}
+
+.fb-header h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
+
+.fb-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.fb-body:not(:has(.fb-visual)) {
+  grid-template-columns: 1fr;
+  max-width: 680px;
+}
+
+.fb-desc p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  margin-bottom: 1.75rem;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.feature-list li {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.feature-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.8rem;
+}
+
+.code-block {
+  background: #060b14;
+  border: 1px solid var(--border-glow);
+  padding: 1.5rem;
+  font-size: 0.78rem;
+  line-height: 1.8;
+  color: var(--success);
+  overflow-x: auto;
+}
+
+.code-block pre { margin: 0; }
+
+.cta-inner {
+  text-align: center;
+  padding: 6rem 0;
+}
+.cta-inner h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1.25rem; }
+.cta-inner p { color: var(--text-muted); font-size: 1rem; margin-bottom: 2.5rem; }
+
+@media (max-width: 768px) {
+  .fb-body { grid-template-columns: 1fr; gap: 2rem; }
+}
+</style>

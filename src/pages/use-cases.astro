@@ -1,0 +1,182 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Use Cases — SolanaForensics" description="How law enforcement, compliance teams, fraud investigators, and legal professionals use SolanaForensics.">
+
+  <div style="height: 70px;"></div>
+
+  <section class="page-hero grid-bg">
+    <div class="container">
+      <div class="tag">// Use Cases</div>
+      <h1>Deployed across <span class="accent">investigation verticals.</span></h1>
+      <p class="page-hero-sub">SolanaForensics serves professionals who need evidentiary-grade blockchain intelligence.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+
+      <div class="uc-block" id="law-enforcement">
+        <div class="uc-label">
+          <span class="mono" style="color:var(--accent)">// 01</span>
+          <h2>Law Enforcement</h2>
+        </div>
+        <div class="uc-content">
+          <p>Police forces and financial crime units need blockchain evidence that meets courtroom standards. SolanaForensics provides a full forensic chain of custody, structured reports aligned with law enforcement submission formats, and real-time monitoring tools for active investigations.</p>
+          <div class="uc-scenarios">
+            <div class="scenario card">
+              <h4>Crypto Fraud Investigations</h4>
+              <p>Trace funds from victim wallets to exchange accounts, identify withdrawal points for KYC requests, and build a complete evidence package for arrest warrants.</p>
+            </div>
+            <div class="scenario card">
+              <h4>Investment Scam Takedowns</h4>
+              <p>Map the full financial structure of fraudulent investment platforms — identify operators, trace fund extraction patterns, and quantify total victim losses.</p>
+            </div>
+            <div class="scenario card">
+              <h4>Money Laundering Cases</h4>
+              <p>Document layering techniques used to obscure criminal proceeds and present them in formats suitable for prosecution.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="uc-block" id="compliance">
+        <div class="uc-label">
+          <span class="mono" style="color:var(--accent)">// 02</span>
+          <h2>Compliance & AML</h2>
+        </div>
+        <div class="uc-content">
+          <p>Financial intelligence units and compliance teams need automated tools to detect suspicious on-chain activity and generate Suspicious Activity Reports (SARs) and FIAU submissions efficiently.</p>
+          <div class="uc-scenarios">
+            <div class="scenario card">
+              <h4>SAR Generation</h4>
+              <p>Automatically generate Suspicious Activity Reports with full transaction evidence and risk scoring for regulatory bodies.</p>
+            </div>
+            <div class="scenario card">
+              <h4>Counterparty Risk Assessment</h4>
+              <p>Assess the risk profile of counterparties before transacting, based on wallet history and network associations.</p>
+            </div>
+            <div class="scenario card">
+              <h4>Travel Rule Compliance</h4>
+              <p>Identify and document originator and beneficiary information for VASP-to-VASP transactions above threshold amounts.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="uc-block" id="fraud">
+        <div class="uc-label">
+          <span class="mono" style="color:var(--accent)">// 03</span>
+          <h2>Fraud Investigation</h2>
+        </div>
+        <div class="uc-content">
+          <p>Private fraud investigators, corporate security teams, and forensic accountants use SolanaForensics to reconstruct complex fraud schemes and identify the individuals who benefited.</p>
+          <div class="uc-scenarios">
+            <div class="scenario card">
+              <h4>Exit Scam Analysis</h4>
+              <p>Reconstruct the timeline and mechanics of rug pulls and exit scams, identify founders' wallets, and quantify proceeds extracted from investors.</p>
+            </div>
+            <div class="scenario card">
+              <h4>DeFi Exploit Tracing</h4>
+              <p>Trace exploit proceeds from flash loan attacks and protocol exploits through DEXes and bridges to final destinations.</p>
+            </div>
+            <div class="scenario card">
+              <h4>Insider Trading Detection</h4>
+              <p>Identify wallets with foreknowledge of token launches or protocol exploits based on pre-event positioning patterns.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="uc-block" id="legal">
+        <div class="uc-label">
+          <span class="mono" style="color:var(--accent)">// 04</span>
+          <h2>Legal & Asset Recovery</h2>
+        </div>
+        <div class="uc-content">
+          <p>Legal counsel and asset recovery specialists use our platform to build blockchain evidence packages for civil litigation, freezing orders, and victim restitution proceedings.</p>
+          <div class="uc-scenarios">
+            <div class="scenario card">
+              <h4>Asset Freezing Orders</h4>
+              <p>Identify and document wallet addresses holding misappropriated assets to support injunction applications and preservation orders.</p>
+            </div>
+            <div class="scenario card">
+              <h4>Victim Restitution</h4>
+              <p>Identify recoverable assets still on-chain and prioritise wallets for enforcement action in victim recovery proceedings.</p>
+            </div>
+            <div class="scenario card">
+              <h4>Litigation Support</h4>
+              <p>Provide expert-witness-ready forensic reports and transaction evidence packages for arbitration and court proceedings.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section style="background: var(--bg-2); border-top: 1px solid var(--border); padding: 6rem 0; text-align: center;">
+    <div class="container">
+      <div class="tag">// Start Investigating</div>
+      <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1.25rem;">Start investigating on Telegram.</h2>
+      <p style="color: var(--text-muted); max-width: 480px; margin: 0 auto 2.5rem;">Open @SolanaForensicsBot and run your first investigation in under 60 seconds.</p>
+      <a href="https://t.me/SolanaForensicsBot" target="_blank" rel="noopener" class="btn btn-primary">Start Investigating →</a>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+.page-hero { padding: 6rem 0 5rem; border-bottom: 1px solid var(--border); }
+.page-hero h1 { font-size: clamp(2.5rem, 4vw, 4rem); max-width: 700px; margin-bottom: 1.25rem; }
+.page-hero-sub { color: var(--text-muted); font-size: 1.05rem; max-width: 540px; line-height: 1.7; }
+
+.uc-block {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 5rem;
+  padding: 5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.uc-label span { display: block; margin-bottom: 0.75rem; font-size: 0.78rem; letter-spacing: 0.1em; }
+.uc-label h2 { font-size: 1.75rem; }
+
+.uc-content > p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+}
+
+.uc-scenarios {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+}
+
+.scenario {
+  background: var(--bg);
+  padding: 1.75rem;
+}
+
+.scenario h4 {
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+}
+
+.scenario p {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+@media (max-width: 900px) {
+  .uc-block { grid-template-columns: 1fr; gap: 2rem; }
+  .uc-scenarios { grid-template-columns: 1fr; }
+}
+</style>

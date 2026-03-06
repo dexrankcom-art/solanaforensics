@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const updated = "1 March 2025";
+---
+
+<BaseLayout title="Terms of Service — SolanaForensics" description="Terms of service for SolanaForensics.com">
+  <div style="height: 70px;"></div>
+  <section style="border-bottom: 1px solid var(--border); padding: 5rem 0 4rem;">
+    <div class="container">
+      <div class="tag">// Legal</div>
+      <h1>Terms of Service</h1>
+      <p class="mono" style="color: var(--text-dim); font-size: 0.78rem; margin-top: 1rem;">Last updated: {updated}</p>
+    </div>
+  </section>
+  <section>
+    <div class="container legal-body">
+      <h2>1. Acceptance of Terms</h2>
+      <p>By accessing or using SolanaForensics ("the Platform"), you agree to be bound by these Terms of Service. If you do not agree, you may not use the Platform.</p>
+      <h2>2. Eligibility</h2>
+      <p>The Platform is available exclusively to verified law enforcement officers, licensed investigators, compliance professionals, and legal counsel. Use by individuals who do not meet these criteria is strictly prohibited.</p>
+      <h2>3. Permitted Use</h2>
+      <p>The Platform may only be used for lawful investigative, compliance, and legal purposes. Any use that violates applicable laws, infringes on the rights of third parties, or facilitates illegal activity is strictly prohibited.</p>
+      <h2>4. Intellectual Property</h2>
+      <p>All content, software, and tools provided by SolanaForensics are the intellectual property of Clavestra Intel. You may not reproduce, distribute, or create derivative works without express written permission.</p>
+      <h2>5. Disclaimer of Warranties</h2>
+      <p>The Platform is provided "as is" without warranties of any kind. Blockchain data is provided for informational and investigative purposes. We do not guarantee the completeness or accuracy of blockchain intelligence outputs.</p>
+      <h2>6. Limitation of Liability</h2>
+      <p>To the maximum extent permitted by law, Clavestra Intel shall not be liable for any indirect, incidental, or consequential damages arising from use of the Platform.</p>
+      <h2>7. Governing Law</h2>
+      <p>These Terms are governed by and construed in accordance with applicable law. Disputes shall be subject to the exclusive jurisdiction of the relevant courts.</p>
+      <h2>8. Changes</h2>
+      <p>We reserve the right to modify these Terms at any time. Continued use of the Platform after changes constitutes acceptance of the revised Terms.</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.legal-body { max-width: 760px; padding: 4rem 0 6rem; }
+.legal-body h2 { font-size: 1.1rem; margin: 2.5rem 0 0.875rem; color: var(--text); padding-top: 2rem; border-top: 1px solid var(--border); }
+.legal-body h2:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+.legal-body p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.8; }
+</style>

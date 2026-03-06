@@ -1,0 +1,153 @@
+---
+import BaseLayout from './BaseLayout.astro';
+const { frontmatter } = Astro.props;
+const formattedDate = new Date(frontmatter.date).toLocaleDateString('en-GB', {
+  day: '2-digit', month: 'long', year: 'numeric'
+});
+---
+
+<BaseLayout title={`${frontmatter.title} — SolanaForensics`} description={frontmatter.description}>
+
+  <div style="height: 70px;"></div>
+
+  <section class="post-hero grid-bg">
+    <div class="container">
+      <div class="post-meta">
+        <span class="mono post-date">{formattedDate}</span>
+        {frontmatter.category && <span class="post-cat">{frontmatter.category}</span>}
+      </div>
+      <h1>{frontmatter.title}</h1>
+      <p class="post-desc">{frontmatter.description}</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container post-layout">
+      <article class="post-body">
+        <slot />
+      </article>
+      <aside class="post-sidebar">
+        <div class="card" style="padding: 1.75rem; margin-bottom: 1.5rem;">
+          <div class="tag" style="font-size:0.65rem">// Published</div>
+          <p class="mono" style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">{formattedDate}</p>
+        </div>
+        <div class="card" style="padding: 1.75rem;">
+          <div class="tag" style="font-size:0.65rem">// Intelligence by</div>
+          <p style="color: var(--accent); font-family: var(--mono); font-size: 0.85rem; margin-top: 0.75rem;">Clavestra Intel</p>
+          <p style="color: var(--text-dim); font-family: var(--mono); font-size: 0.75rem; margin-top: 0.25rem;">SolanaForensics</p>
+        </div>
+        <a href="/blog" class="btn btn-outline" style="margin-top: 1.5rem; width: 100%; justify-content: center;">← All Reports</a>
+      </aside>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+.post-hero {
+  padding: 6rem 0 4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.post-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.post-date {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+}
+
+.post-cat {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 0.15rem 0.5rem;
+}
+
+.post-hero h1 {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  max-width: 800px;
+  margin-bottom: 1.25rem;
+}
+
+.post-desc {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  max-width: 640px;
+  line-height: 1.7;
+}
+
+.post-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 5rem;
+  padding: 4rem 0 6rem;
+  align-items: start;
+}
+
+.post-body {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.85;
+}
+
+.post-body :global(h2) {
+  font-size: 1.4rem;
+  color: var(--text);
+  margin: 3rem 0 1.25rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.post-body :global(h3) {
+  font-size: 1.1rem;
+  color: var(--text);
+  margin: 2rem 0 0.875rem;
+}
+
+.post-body :global(p) { margin-bottom: 1.25rem; }
+
+.post-body :global(ul), .post-body :global(ol) {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.post-body :global(li) {
+  margin-bottom: 0.5rem;
+}
+
+.post-body :global(code) {
+  font-family: var(--mono);
+  font-size: 0.85em;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 0.15em 0.4em;
+  color: var(--accent);
+}
+
+.post-body :global(pre) {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+.post-body :global(pre code) {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+@media (max-width: 900px) {
+  .post-layout { grid-template-columns: 1fr; }
+}
+</style>
