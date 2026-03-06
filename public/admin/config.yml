@@ -1,21 +1,21 @@
 backend:
   name: git-gateway
-  branch: main
+  branch: master
 
-media_folder: "public/images/uploads"
-public_folder: "/images/uploads"
+media_folder: public/images/uploads
+public_folder: /images/uploads
 
 collections:
   - name: "blog"
-    label: "Reports & Blog Posts"
+    label: "Blog Posts"
     folder: "src/pages/blog"
     create: true
     slug: "{{slug}}"
     extension: "md"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Category", name: "category", widget: "select", options: ["Analysis", "Case Study", "Intelligence", "Tool Update"], required: false }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Category", name: "category", widget: "select", options: ["Analysis", "Intelligence", "Research", "Case Study"] }
       - { label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/BlogLayout.astro" }
       - { label: "Body", name: "body", widget: "markdown" }
