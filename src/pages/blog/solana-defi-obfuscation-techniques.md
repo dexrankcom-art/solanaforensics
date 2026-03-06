@@ -6,7 +6,7 @@ category: "Analysis"
 layout: "../../layouts/BlogLayout.astro"
 ---
 
-This report provides an overview of obfuscation techniques commonly encountered in Solana-based fraud investigations, with guidance on forensic approaches to each.
+This report provides an overview of obfuscation techniques commonly encountered in Solana-based fraud investigations, with guidance on forensic approaches to each. These techniques are commonly identified during [wallet investigations and token tracing](/features) performed by SolanaForensics.
 
 ## LP Position Cycling
 
@@ -18,16 +18,16 @@ Key forensic indicators include short LP holding periods inconsistent with yield
 
 Suspects frequently move funds through chains of freshly-created wallets in rapid succession. Each hop reduces the apparent link between source and destination.
 
-Forensic countermeasures include timing analysis (wallets created immediately before first receipt), dust analysis (wallets receiving only what they forward), and network graph clustering to identify common controllers.
+Forensic countermeasures include timing analysis (wallets created immediately before first receipt), dust analysis (wallets receiving only what they forward), and network graph clustering to identify common controllers. These patterns are a primary focus of [law enforcement investigations](/use-cases#law-enforcement) involving crypto fraud.
 
 ## DEX-Based Layering
 
 Swapping between tokens via DEXes like Jupiter creates additional layers of apparent complexity. Funds enter as SOL, are swapped to USDC, then to another token, then back — creating multiple transaction hops that obscure the original source.
 
-Token swap forensics require reconstructing the economic value at each swap point to confirm continuity of funds.
+Token swap forensics require reconstructing the economic value at each swap point to confirm continuity of funds. SolanaForensics provides [dedicated token tracing capabilities](/features#token-tracing) to automate this process.
 
 ## Cross-Chain Bridges
 
 Moving funds via bridges like Wormhole or Allbridge creates a perceived break in the chain. Many investigators stop at the bridge transaction, treating it as a dead end.
 
-Effective cross-chain tracing requires maintaining the economic value thread across the bridge and continuing the trace on the destination chain.
+Effective cross-chain tracing requires maintaining the economic value thread across the bridge and continuing the trace on the destination chain. This technique is increasingly encountered in [fraud investigation](/use-cases#fraud) and [compliance](/use-cases#compliance) contexts.

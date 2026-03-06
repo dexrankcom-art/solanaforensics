@@ -4,5 +4,13 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://solanaforensics.com',
-  integrations: [mdx(), sitemap()],
+  integrations: [
+    mdx(),
+    sitemap({
+      filter: (page) =>
+        !page.includes('/privacy-policy') &&
+        !page.includes('/terms') &&
+        !page.includes('/disclaimer'),
+    }),
+  ],
 });

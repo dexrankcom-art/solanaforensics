@@ -9,7 +9,7 @@
 
 SolanaForensics is a **Telegram-based on-chain intelligence bot** for Solana investigations. The website is a marketing and information site for the bot — it explains what the bot does, who it's for, and how to get access.
 
-**Core product:** A Telegram bot users chat with to investigate Solana wallets, tokens, and custodial platforms — powered by Clavestra Intel's forensic infrastructure (Helius, Arkham, Solscan Pro, CoinGecko).
+**Core product:** A Telegram bot users chat with to investigate Solana wallets, tokens, and custodial platforms — powered by Clavestra Intel's forensic infrastructure (Helius, Arkham, Solscan, CoinGecko).
 
 ---
 
@@ -49,7 +49,7 @@ solanaforensics/
 │       ├── index.astro            ← Homepage
 │       ├── features.astro         ← What the bot can do (5 modules)
 │       ├── use-cases.astro        ← LE, compliance, fraud, legal
-│       ├── about.astro            ← About + Clavestra Intel
+│       ├── about.astro            ← About + Clavestra Intel clavestra,com 
 │       ├── contact.astro          ← Access request form
 │       ├── privacy-policy.astro
 │       ├── terms.astro
@@ -128,7 +128,7 @@ solanaforensics/
 **CTA Section**
 - Centered, radial glow background
 - "Start investigating on Telegram." headline
-- Link to Telegram bot
+- Link to Telegram bot @solanaforensics_bot to run the investigation agent
 
 ---
 
@@ -180,10 +180,10 @@ Recommended: Freeze request — Kraken EU
 - Intermediary chain documentation
 
 #### 05 — Law Enforcement Reports
-- PDF forensic reports, court-ready
+- PDF forensic reports, police report ready, court-ready
 - On-chain evidence citations
 - Timeline reconstruction
-- Recommended actions (freeze requests, jurisdictions)
+- Recommended actions (freeze requests,blacklist addresses, jurisdictions)
 
 ---
 

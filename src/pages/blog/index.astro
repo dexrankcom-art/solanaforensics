@@ -5,7 +5,7 @@ const posts = await Astro.glob('./*.md');
 const sortedPosts = posts.sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime());
 ---
 
-<BaseLayout title="Reports & Intelligence — SolanaForensics" description="Forensic intelligence reports and blockchain analysis from the SolanaForensics team.">
+<BaseLayout title="Reports & Intelligence — SolanaForensics" description="Published forensic intelligence reports, blockchain analysis case studies, and investigative findings from the SolanaForensics research team.">
 
   <div style="height: 70px;"></div>
 
@@ -111,7 +111,28 @@ const sortedPosts = posts.sort((a, b) => new Date(b.frontmatter.date).getTime() 
   text-align: center;
 }
 
+@media (max-width: 1024px) {
+  .posts-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (max-width: 900px) {
   .posts-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .page-hero { padding: 4rem 0 3rem; }
+  .page-hero h1 { font-size: clamp(1.75rem, 5vw, 3rem); }
+  .page-hero-sub { font-size: 0.95rem; }
+  .posts-grid { margin: 3rem 0; }
+  .post-card { padding: 1.75rem 1.5rem; }
+  .post-card h3 { font-size: 0.95rem; }
+  .post-card p { font-size: 0.82rem; }
+}
+
+@media (max-width: 480px) {
+  .page-hero { padding: 3rem 0 2rem; }
+  .posts-grid { margin: 2rem 0; }
+  .post-card { padding: 1.25rem 1rem; }
+  .empty-state { padding: 3rem 0; }
 }
 </style>

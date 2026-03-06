@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Page Not Found — SolanaForensics" noindex={true}>
+
+  <div style="height: 70px;"></div>
+
+  <section class="not-found">
+    <div class="container not-found-inner">
+      <span class="nf-code mono">404</span>
+      <h1>Page not found.</h1>
+      <p>The page you're looking for doesn't exist, has been moved, or was never here to begin with.</p>
+      <div class="nf-actions">
+        <a href="/" class="btn btn-primary">Go Home →</a>
+        <a href="/features" class="btn btn-outline">Features</a>
+        <a href="/use-cases" class="btn btn-outline">Use Cases</a>
+        <a href="/contact" class="btn btn-outline">Contact</a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+.not-found {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.not-found-inner {
+  text-align: center;
+  max-width: 560px;
+  padding: 4rem 2rem;
+}
+
+.nf-code {
+  font-size: clamp(4rem, 10vw, 8rem);
+  color: var(--accent);
+  opacity: 0.15;
+  display: block;
+  line-height: 1;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.not-found-inner h1 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin-bottom: 1rem;
+}
+
+.not-found-inner p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+.nf-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+</style>

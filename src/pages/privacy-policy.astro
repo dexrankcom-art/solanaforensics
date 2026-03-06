@@ -1,9 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const updated = "1 March 2025";
+const updated = "6 March 2026";
 ---
 
-<BaseLayout title="Privacy Policy — SolanaForensics" description="Privacy policy for SolanaForensics.com">
+<BaseLayout title="Privacy Policy — SolanaForensics" description="Privacy policy for SolanaForensics.com" noindex={true}>
 
   <div style="height: 70px;"></div>
 
@@ -18,7 +18,7 @@ const updated = "1 March 2025";
   <section>
     <div class="container legal-body">
       <h2>1. Introduction</h2>
-      <p>SolanaForensics ("we", "our", "us"), operated by Clavestra Intel, is committed to protecting the privacy of individuals who interact with this website. This Privacy Policy explains what information we collect, how we use it, and your rights in relation to it.</p>
+      <p>SolanaForensics ("we", "our", "us"), operated by Clavestra Intel, is committed to protecting the privacy of individuals who interact with this website in accordance with the General Data Protection Regulation (GDPR) and applicable EU data protection laws. This Privacy Policy explains what information we collect, how we use it, and your rights in relation to it.</p>
 
       <h2>2. Information We Collect</h2>
       <p>We collect information you provide directly when you submit the access request form, including your name, email address, organisation, and professional role. We may also collect standard server log data including IP addresses, browser type, and pages visited for security and operational purposes.</p>
@@ -26,23 +26,41 @@ const updated = "1 March 2025";
       <h2>3. How We Use Your Information</h2>
       <p>Information submitted via the contact form is used solely to evaluate and process your access request. We do not sell, rent, or share your personal information with third parties except where required by law or with your explicit consent.</p>
 
-      <h2>4. Data Retention</h2>
-      <p>We retain submitted access request information for as long as necessary to manage your access relationship with SolanaForensics, or for a maximum of 3 years if no access relationship is established.</p>
+      <h2>4. Legal Basis for Processing</h2>
+      <p>We process personal data on the basis of legitimate interest (evaluating access requests from qualified professionals), consent (where you voluntarily submit information via our contact form), and legal obligation (where we are required to retain data by applicable law).</p>
 
-      <h2>5. Cookies</h2>
+      <h2>5. Data Retention</h2>
+      <p>We retain submitted access request information for as long as necessary to manage your access relationship with SolanaForensics, or for a maximum of 3 years if no access relationship is established. After this period, your data will be securely deleted unless retention is required by law.</p>
+
+      <h2>6. Cookies</h2>
       <p>This website uses only essential technical cookies necessary for site operation. We do not use tracking cookies or third-party analytics cookies.</p>
 
-      <h2>6. Your Rights</h2>
-      <p>You have the right to access, correct, or request deletion of personal information we hold about you. To exercise these rights, contact us via the contact page.</p>
+      <h2>7. Your Rights Under GDPR</h2>
+      <p>Under the General Data Protection Regulation, you have the following rights in relation to your personal data:</p>
+      <ul>
+        <li><strong>Right of Access</strong> — You have the right to obtain confirmation of whether we process your personal data and to request a copy of that data.</li>
+        <li><strong>Right to Rectification</strong> — You have the right to request correction of inaccurate personal data we hold about you.</li>
+        <li><strong>Right to Erasure</strong> — You have the right to request deletion of your personal data where there is no compelling reason for continued processing.</li>
+        <li><strong>Right to Restriction</strong> — You have the right to request that we restrict processing of your personal data in certain circumstances.</li>
+        <li><strong>Right to Data Portability</strong> — You have the right to receive your personal data in a structured, commonly used, machine-readable format.</li>
+        <li><strong>Right to Object</strong> — You have the right to object to processing of your personal data based on legitimate interests.</li>
+      </ul>
+      <p>To exercise any of these rights, contact us via the <a href="/contact">contact page</a>. We will respond to your request within 30 days.</p>
 
-      <h2>7. Security</h2>
+      <h2>8. International Data Transfers</h2>
+      <p>Your personal data is processed within the European Union and European Economic Area (EU/EEA). In the event that data is transferred outside the EU/EEA, we ensure appropriate safeguards are in place, including Standard Contractual Clauses approved by the European Commission, to protect your data in accordance with GDPR requirements.</p>
+
+      <h2>9. Security</h2>
       <p>We implement appropriate technical and organisational measures to protect personal information against unauthorised access, alteration, disclosure, or destruction.</p>
 
-      <h2>8. Changes to This Policy</h2>
+      <h2>10. Changes to This Policy</h2>
       <p>We may update this Privacy Policy from time to time. The updated date at the top of this page reflects the most recent revision.</p>
 
-      <h2>9. Contact</h2>
-      <p>For privacy-related queries, please contact us via the <a href="/contact">contact page</a>.</p>
+      <h2>11. Supervisory Authority</h2>
+      <p>If you believe that our processing of your personal data infringes the GDPR, you have the right to lodge a complaint with a supervisory authority in the EU Member State of your habitual residence, place of work, or place of the alleged infringement.</p>
+
+      <h2>12. Contact</h2>
+      <p>For privacy-related queries or to exercise your data protection rights, please contact us via the <a href="/contact">contact page</a>.</p>
     </div>
   </section>
 
@@ -65,5 +83,40 @@ const updated = "1 March 2025";
   color: var(--text-muted);
   font-size: 0.9rem;
   line-height: 1.8;
+}
+.legal-body ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 1.5rem;
+}
+.legal-body li {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.8;
+  padding-left: 1.25rem;
+  position: relative;
+  margin-bottom: 0.75rem;
+}
+.legal-body li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+}
+.legal-body li strong {
+  color: var(--text);
+}
+
+@media (max-width: 768px) {
+  .legal-body { padding: 3rem 0 4rem; }
+  .legal-body h2 { font-size: 1rem; margin: 2rem 0 0.75rem; padding-top: 1.5rem; }
+  .legal-body p { font-size: 0.88rem; }
+  .legal-body li { font-size: 0.88rem; }
+}
+@media (max-width: 480px) {
+  .legal-body { padding: 2rem 0 3rem; }
+  .legal-body h2 { font-size: 0.95rem; }
 }
 </style>

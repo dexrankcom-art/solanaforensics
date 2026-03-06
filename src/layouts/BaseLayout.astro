@@ -7,10 +7,20 @@ interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  ogType?: string;
+  noindex?: boolean;
+  extraHead?: string;
 }
 
-const { title, description = 'Telegram bot for Solana forensic investigations. Trace wallets, map CEX cashouts, and generate law-enforcement-ready reports. Powered by Clavestra Intel.', ogImage = '/og-image.png' } = Astro.props;
+const {
+  title,
+  description = 'Forensic intelligence agent for Solana blockchain investigations. Trace wallets, map CEX cashouts, and generate law-enforcement-ready reports.',
+  ogImage = '/og-image.png',
+  ogType = 'website',
+  noindex = false,
+} = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const absoluteOgImage = new URL(ogImage, Astro.site).href;
 ---
 
 <!doctype html>
@@ -18,23 +28,80 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link rel="canonical" href={canonicalURL} />
     <meta name="description" content={description} />
+
+    {noindex && <meta name="robots" content="noindex, follow" />}
+
+    <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:image" content={absoluteOgImage} />
+    <meta property="og:image:width" content="1376" />
+    <meta property="og:image:height" content="768" />
+    <meta property="og:image:type" content="image/png" />
     <meta property="og:url" content={canonicalURL} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
+
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@solanaforensics" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={absoluteOgImage} />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="theme-color" content="#050810" />
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "SolanaForensics",
+      "url": "https://solanaforensics.com",
+      "logo": "https://solanaforensics.com/og-image.png",
+      "description": "Forensic-grade on-chain intelligence for the Solana blockchain",
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Clavestra Intel"
+      },
+      "sameAs": ["https://t.me/solanaforensics_bot", "https://x.com/solanaforensics"]
+    })} />
+
+    <slot name="head" />
     <title>{title}</title>
   </head>
   <body>
+    <a href="#main" class="skip-link">Skip to content</a>
     <Nav />
-    <main>
+    <main id="main">
       <slot />
     </main>
     <Footer />
   </body>
 </html>
+
+<style>
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--accent);
+    color: #000;
+    padding: 0.5rem 1rem;
+    z-index: 10000;
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    text-decoration: none;
+    transition: top 0.2s;
+  }
+  .skip-link:focus {
+    top: 0;
+  }
+</style>

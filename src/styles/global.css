@@ -11,7 +11,7 @@
   --accent-dim: rgba(0, 212, 255, 0.12);
   --accent-dim2: rgba(0, 212, 255, 0.04);
   --text: #e8eaf0;
-  --text-muted: #6b7a99;
+  --text-muted: #8a9bba;
   --text-dim: #3a4560;
   --danger: #ff3366;
   --success: #00ff88;
@@ -27,6 +27,7 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -92,6 +93,7 @@ h1, h2, h3, h4 {
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   padding: 0.875rem 2rem;
   font-family: var(--mono);
@@ -102,6 +104,7 @@ h1, h2, h3, h4 {
   cursor: pointer;
   transition: all 0.2s;
   text-decoration: none;
+  min-height: 44px;
 }
 
 .btn-primary {
@@ -194,4 +197,67 @@ section {
 
 .animate-fadeup {
   animation: fadeUp 0.6s ease forwards;
+}
+
+/* ========================================
+   RESPONSIVE BREAKPOINTS
+   ======================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .container { max-width: 960px; }
+  section { padding: 5rem 0; }
+  .section-header { margin-bottom: 3rem; }
+}
+
+/* Small Tablet */
+@media (max-width: 768px) {
+  .container { padding: 0 1.25rem; }
+  section { padding: 3.5rem 0; }
+  .section-header { margin-bottom: 2.5rem; }
+
+  body::before {
+    background: none;
+  }
+
+  .grid-bg {
+    background-size: 40px 40px;
+  }
+
+  h1 { font-size: clamp(1.75rem, 5vw, 3rem); }
+  h2 { font-size: clamp(1.25rem, 3.5vw, 1.75rem); }
+
+  .card { padding: 1.5rem; }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .container { padding: 0 1rem; }
+  section { padding: 2.5rem 0; }
+
+  body {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .card { padding: 1.25rem; }
+
+  .btn {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.8rem;
+    min-height: 48px;
+  }
+
+  .tag {
+    font-size: 0.65rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 320px) {
+  .container { padding: 0 0.75rem; }
+
+  h1 { font-size: clamp(1.5rem, 6vw, 2rem); }
+  h2 { font-size: clamp(1.1rem, 4vw, 1.5rem); }
 }

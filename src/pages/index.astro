@@ -2,28 +2,36 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="SolanaForensics — On-Chain Intelligence for Solana">
+<BaseLayout title="SolanaForensics — Solana Blockchain Forensic Intelligence Agent">
+
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "SolanaForensics",
+    "url": "https://solanaforensics.com"
+  })} />
 
   <!-- HERO -->
   <section class="hero grid-bg">
+    <canvas id="particle-network" aria-hidden="true"></canvas>
     <div class="hero-glow"></div>
     <div class="container hero-inner">
       <div class="hero-content">
-        <div class="tag">// Telegram Forensic Intelligence Bot</div>
+        <div class="tag">// Forensic Intelligence Agent</div>
         <h1 class="hero-title">
-          Track. Trace.<br/>
-          <span class="accent glow-text">Expose.</span>
+          <span>Track. Trace.<br/><span class="accent glow-text">Expose.</span></span>
+          <span class="sr-only">Solana Blockchain Forensic Investigation Agent</span>
         </h1>
         <p class="hero-sub">
-          A Telegram bot for Solana forensic investigations. Trace wallets, map CEX cashouts, and generate law-enforcement-ready reports — powered by Clavestra Intel.
+          A forensic intelligence agent for Solana investigations. Trace wallets, map CEX cashouts, and generate law-enforcement-ready reports — powered by Clavestra Intel.
         </p>
         <div class="hero-actions">
-          <a href="https://t.me/SolanaForensicsBot" target="_blank" rel="noopener" class="btn btn-primary">Start on Telegram →</a>
+          <a href="https://t.me/solanaforensics_bot" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start on Telegram →</a>
           <a href="/features" class="btn btn-outline">See Features</a>
         </div>
         <div class="hero-stats">
           <div class="stat">
-            <span class="stat-val mono">500M+</span>
+            <span class="stat-val mono" data-count-to="500" data-count-suffix="M+">0</span>
             <span class="stat-label">Transactions Indexed</span>
           </div>
           <div class="stat-divider"></div>
@@ -47,9 +55,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <span class="dot green"></span>
             <span class="terminal-title mono">solana_forensics — wallet_trace</span>
           </div>
-          <div class="terminal-body mono" id="terminal-output">
-            <p class="cursor mono">█</p>
-          </div>
+          <div class="term-progress" id="term-progress"></div>
+          <div class="terminal-body mono" id="terminal-output"></div>
         </div>
       </div>
     </div>
@@ -59,32 +66,32 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="how-it-works">
     <div class="container">
       <div class="section-header">
-        <div class="tag">// How It Works</div>
-        <h2>Forensic intelligence via <span class="accent">Telegram.</span></h2>
-        <p class="section-sub">No dashboards. No logins. Just open Telegram and start investigating.</p>
+        <div class="tag reveal">// How It Works</div>
+        <h2 class="reveal section-h2">Forensic intelligence via <span class="accent">Telegram.</span></h2>
+        <p class="section-sub reveal">No dashboards. No logins. Just open Telegram and start investigating.</p>
       </div>
 
-      <div class="hiw-steps">
-        <div class="hiw-step">
+      <div class="hiw-steps reveal-stagger">
+        <div class="hiw-step reveal">
           <span class="hiw-num mono">01</span>
           <h3>Start a chat</h3>
-          <p>Open @SolanaForensicsBot on Telegram. No account setup, no onboarding flow.</p>
+          <p>Open @solanaforensics_bot on Telegram. No account setup, no onboarding flow.</p>
         </div>
         <div class="hiw-connector"></div>
-        <div class="hiw-step">
+        <div class="hiw-step reveal">
           <span class="hiw-num mono">02</span>
           <h3>Ask your question</h3>
           <p>Send a wallet address, token mint, or investigation query in plain language.</p>
         </div>
         <div class="hiw-connector"></div>
-        <div class="hiw-step">
+        <div class="hiw-step reveal">
           <span class="hiw-num mono">03</span>
           <h3>Get forensic intelligence</h3>
           <p>Receive structured analysis: risk scores, entity labels, fund flows, and LE-ready exports.</p>
         </div>
       </div>
 
-      <div class="hiw-demo">
+      <div class="hiw-demo reveal">
         <div class="chat-window">
           <div class="chat-header mono">
             <span class="chat-dot"></span>
@@ -92,13 +99,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
           <div class="chat-messages">
             <div class="chat-msg user">
-              <div class="chat-bubble user-bubble">Check wallet 9xTz...mK4p</div>
+              <div class="chat-bubble user-bubble">Check wallet HdHZ...kQ3s</div>
               <span class="chat-time mono">14:32</span>
             </div>
             <div class="chat-msg bot">
               <div class="chat-bubble bot-bubble">
                 <div class="bot-response mono">
-                  <p class="bot-header">WALLET REPORT: 9xTz...mK4p</p>
+                  <p class="bot-header">WALLET REPORT: HdHZ...kQ3s</p>
                   <p>━━━━━━━━━━━━━━━━━━━━━━━━</p>
                   <p>Risk Score: &nbsp;&nbsp;&nbsp;&nbsp;<span class="t-danger">94/100 [CRITICAL]</span></p>
                   <p>Entity: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unknown — flagged cluster</p>
@@ -121,8 +128,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- CONTEXT BAR -->
   <section class="context-bar">
     <div class="container">
-      <p class="context-label mono">// Built for investigation professionals</p>
-      <div class="context-items">
+      <p class="context-label mono reveal">// Built for investigation professionals</p>
+      <div class="context-items reveal">
         <span>Law Enforcement</span>
         <span class="sep">—</span>
         <span>Financial Intelligence Units</span>
@@ -140,43 +147,43 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="features-preview">
     <div class="container">
       <div class="section-header">
-        <div class="tag">// Core Capabilities</div>
-        <h2>Everything you need to <br/><span class="accent">follow the money.</span></h2>
-        <p class="section-sub">Purpose-built Telegram bot modules for Solana chain analysis, from wallet tracing to automated report generation.</p>
+        <div class="tag reveal">// Core Capabilities</div>
+        <h2 class="reveal section-h2">Everything you need to <br/><span class="accent">follow the money.</span></h2>
+        <p class="section-sub reveal">Purpose-built forensic intelligence modules for Solana chain analysis, from wallet tracing to automated report generation.</p>
       </div>
 
-      <div class="features-grid">
-        <div class="card feature-card">
+      <div class="features-grid reveal-stagger">
+        <div class="card feature-card reveal">
           <div class="feature-icon">◈</div>
           <h3>Wallet Investigation</h3>
           <p>Ecosystem mapping, entity resolution via Arkham and Helius, depositor outcome analysis, and multi-hop fund flow tracing.</p>
           <a href="/features#wallet-investigation" class="feature-link mono">Explore →</a>
         </div>
-        <div class="card feature-card">
+        <div class="card feature-card reveal">
           <div class="feature-icon">◉</div>
           <h3>Token Tracing</h3>
           <p>SPL token flow analysis, mint/burn tracking, cross-token movement mapping, and wash trading detection.</p>
           <a href="/features#token-tracing" class="feature-link mono">Explore →</a>
         </div>
-        <div class="card feature-card">
+        <div class="card feature-card reveal">
           <div class="feature-icon">◈</div>
           <h3>Custodial Platform Audits</h3>
           <p>6-point fraud checklist covering yield math, depositor outcomes, insider extraction, solvency, and predecessor operations.</p>
           <a href="/features#custodial-audits" class="feature-link mono">Explore →</a>
         </div>
-        <div class="card feature-card">
+        <div class="card feature-card reveal">
           <div class="feature-icon">◉</div>
           <h3>CEX Cashout Mapping</h3>
           <p>Exchange deposit address identification across 10+ major CEXs with evidence packaging for freeze and seizure requests.</p>
           <a href="/features#cex-cashout" class="feature-link mono">Explore →</a>
         </div>
-        <div class="card feature-card">
+        <div class="card feature-card reveal">
           <div class="feature-icon">◈</div>
           <h3>LE Report Generation</h3>
           <p>PDF forensic reports — police-ready, court-ready. On-chain evidence citations, timeline reconstruction, and recommended actions.</p>
           <a href="/features#le-reports" class="feature-link mono">Explore →</a>
         </div>
-        <div class="card feature-card">
+        <div class="card feature-card reveal">
           <div class="feature-icon">◉</div>
           <h3>Cross-chain Intelligence</h3>
           <p>Bridge transaction tracking across Solana and other chains. Build unified suspect profiles from multi-chain activity.</p>
@@ -184,7 +191,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
       </div>
 
-      <div style="text-align:center; margin-top: 3rem;">
+      <div class="reveal" style="text-align:center; margin-top: 3rem;">
         <a href="/features" class="btn btn-outline">View All Features</a>
       </div>
     </div>
@@ -194,26 +201,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="use-cases-preview" style="background: var(--bg-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
     <div class="container">
       <div class="section-header">
-        <div class="tag">// Applications</div>
-        <h2>Deployed across <span class="accent">investigation verticals.</span></h2>
+        <div class="tag reveal">// Applications</div>
+        <h2 class="reveal section-h2">Deployed across <span class="accent">investigation verticals.</span></h2>
       </div>
-      <div class="use-cases-grid">
-        <a href="/use-cases#law-enforcement" class="use-case-card card">
+      <div class="use-cases-grid reveal-stagger">
+        <a href="/use-cases#law-enforcement" class="use-case-card card reveal">
           <span class="uc-num mono">01</span>
           <h3>Law Enforcement</h3>
           <p>Equip investigators with court-admissible forensic reports and real-time wallet surveillance tools.</p>
         </a>
-        <a href="/use-cases#compliance" class="use-case-card card">
+        <a href="/use-cases#compliance" class="use-case-card card reveal">
           <span class="uc-num mono">02</span>
           <h3>Compliance & AML</h3>
           <p>Automate suspicious activity detection and generate FIAU-ready reports for regulatory submissions.</p>
         </a>
-        <a href="/use-cases#fraud" class="use-case-card card">
+        <a href="/use-cases#fraud" class="use-case-card card reveal">
           <span class="uc-num mono">03</span>
           <h3>Fraud Investigation</h3>
           <p>Reconstruct complex fraud schemes, identify beneficiaries, and trace asset flows across protocols.</p>
         </a>
-        <a href="/use-cases#legal" class="use-case-card card">
+        <a href="/use-cases#legal" class="use-case-card card reveal">
           <span class="uc-num mono">04</span>
           <h3>Legal & Asset Recovery</h3>
           <p>Support litigation with blockchain evidence packages and identify recoverable assets for victims.</p>
@@ -226,94 +233,529 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="cta-section">
     <div class="container cta-inner">
       <div class="cta-glow"></div>
-      <div class="tag">// Start Investigating</div>
-      <h2>Start investigating on Telegram.</h2>
-      <p>Open @SolanaForensicsBot and run your first investigation in under 60 seconds.</p>
-      <a href="https://t.me/SolanaForensicsBot" target="_blank" rel="noopener" class="btn btn-primary">Start Investigating →</a>
+      <div class="tag reveal">// Start Investigating</div>
+      <h2 class="reveal">Start investigating on Telegram.</h2>
+      <p class="reveal">Open @solanaforensics_bot and run your first investigation in under 60 seconds.</p>
+      <a href="https://t.me/solanaforensics_bot" target="_blank" rel="noopener noreferrer" class="btn btn-primary reveal">Start Investigating →</a>
     </div>
   </section>
 
 </BaseLayout>
 
 <script>
-  const lines = [
-    { text: '$ trace --wallet 9xTz...mK4p', delay: 0, cls: 'cmd' },
-    { text: 'Initializing trace engine...', delay: 600, cls: 'dim' },
-    { text: '✓ Connected to Helius RPC', delay: 1200, cls: 'ok' },
-    { text: '✓ Loaded 1,247 transactions', delay: 1800, cls: 'ok' },
-    { text: '✓ Cross-referencing Arkham clusters', delay: 2400, cls: 'ok' },
-    { text: '', delay: 3000, cls: '' },
-    { text: '⚠ HIGH RISK wallet detected', delay: 3200, cls: 'warn' },
-    { text: '— Linked to 3 flagged entities', delay: 3600, cls: 'dim' },
-    { text: '— $842,000 extracted (6 hops)', delay: 4000, cls: 'dim' },
-    { text: '— Last active: 2h ago', delay: 4400, cls: 'dim' },
-    { text: '', delay: 4800, cls: '' },
-    { text: '$ export --format law_enforcement_pdf', delay: 5000, cls: 'cmd' },
-    { text: '✓ Report generated → report_001.pdf', delay: 5800, cls: 'ok' },
+  // --- Terminal typewriter animation (complete overhaul) ---
+  interface TermLine {
+    type: 'command' | 'output' | 'success' | 'alert' | 'detail' | 'blank';
+    text: string;
+    delay: number;
+  }
+
+  const LINES: TermLine[] = [
+    { type: 'command', text: '$ trace --wallet HdHZ...kQ3s',         delay: 300 },
+    { type: 'output',  text: 'Initializing trace engine...',          delay: 400 },
+    { type: 'success', text: '✓ Connected to Helius RPC',            delay: 150 },
+    { type: 'success', text: '✓ Loaded 1,247 transactions',          delay: 150 },
+    { type: 'success', text: '✓ Cross-referencing Arkham clusters',  delay: 1000 },
+    { type: 'blank',   text: '',                                      delay: 0 },
+    { type: 'alert',   text: '⚠ HIGH RISK wallet detected',          delay: 300 },
+    { type: 'detail',  text: '— Linked to 3 flagged entities',       delay: 100 },
+    { type: 'detail',  text: '— $842,000 extracted (6 hops)',        delay: 100 },
+    { type: 'detail',  text: '— Last active: 2h ago',                delay: 100 },
+    { type: 'blank',   text: '',                                      delay: 600 },
+    { type: 'command', text: '$ export --format law_enforcement_pdf', delay: 400 },
+    { type: 'success', text: '✓ Report generated → report_001.pdf',  delay: 0 },
   ];
 
-  const classMap: Record<string, string> = {
-    cmd: 't-cmd',
-    dim: 't-dim',
-    ok: 't-ok',
-    warn: 't-warn',
-  };
-
   let hasPlayed = false;
+  const successLineEls: HTMLElement[] = [];
 
-  function runAnimation() {
+  const wait = (ms: number) => new Promise<void>(r => setTimeout(r, ms));
+
+  function buildLine(line: TermLine): HTMLElement {
+    const p = document.createElement('p');
+    p.className = 'term-line';
+
+    if (line.type === 'blank') {
+      p.innerHTML = '&nbsp;';
+      return p;
+    }
+    if (line.type === 'command') {
+      const dollar = document.createElement('span');
+      dollar.className = 't-prompt';
+      dollar.textContent = '$';
+      const rest = document.createElement('span');
+      rest.className = 't-cmd';
+      rest.textContent = line.text.slice(1);
+      p.appendChild(dollar);
+      p.appendChild(rest);
+      return p;
+    }
+    if (line.type === 'success') {
+      const check = document.createElement('span');
+      check.className = 't-ok-char';
+      check.textContent = '✓';
+      const rest = document.createElement('span');
+      rest.textContent = line.text.slice(1);
+      if (line.text.includes('report_001.pdf')) {
+        const parts = line.text.slice(1).split('report_001.pdf');
+        rest.textContent = parts[0];
+        const fileRef = document.createElement('span');
+        fileRef.className = 't-file-ref';
+        fileRef.textContent = 'report_001.pdf';
+        p.appendChild(check);
+        p.appendChild(rest);
+        p.appendChild(fileRef);
+        return p;
+      }
+      p.appendChild(check);
+      p.appendChild(rest);
+      return p;
+    }
+    if (line.type === 'alert') {
+      const warn = document.createElement('span');
+      warn.className = 't-warn-icon';
+      warn.textContent = '⚠';
+      const space = document.createTextNode(' ');
+      const hr = document.createElement('span');
+      hr.className = 't-danger';
+      hr.textContent = 'HIGH RISK';
+      const rest = document.createTextNode(' wallet detected');
+      p.appendChild(warn);
+      p.appendChild(space);
+      p.appendChild(hr);
+      p.appendChild(rest);
+      return p;
+    }
+    if (line.type === 'detail') {
+      const span = document.createElement('span');
+      span.className = 't-dim';
+      if (line.text.includes('$842,000')) {
+        const parts = line.text.split('$842,000');
+        span.textContent = parts[0];
+        const money = document.createElement('span');
+        money.className = 't-danger';
+        money.textContent = '$842,000';
+        const rest = document.createTextNode(parts[1]);
+        p.appendChild(span);
+        p.appendChild(money);
+        p.appendChild(rest);
+        return p;
+      }
+      span.textContent = line.text;
+      p.appendChild(span);
+      return p;
+    }
+    // output
+    const span = document.createElement('span');
+    span.className = 't-muted';
+    span.textContent = line.text;
+    p.appendChild(span);
+    return p;
+  }
+
+  function typeChars(p: HTMLElement, speed: number): Promise<void> {
+    return new Promise(resolve => {
+      const nodes = Array.from(p.childNodes);
+      const segments: { node: Text; full: string }[] = [];
+      nodes.forEach(n => {
+        if (n.nodeType === Node.TEXT_NODE) {
+          segments.push({ node: n as Text, full: (n as Text).textContent || '' });
+          (n as Text).textContent = '';
+        } else if (n.nodeType === Node.ELEMENT_NODE) {
+          const el = n as HTMLElement;
+          el.querySelectorAll('*').forEach(c => {
+            const walk = document.createTreeWalker(c, NodeFilter.SHOW_TEXT);
+            let tn: Text | null;
+            while ((tn = walk.nextNode() as Text | null)) {
+              segments.push({ node: tn, full: tn.textContent || '' });
+              tn.textContent = '';
+            }
+          });
+          const walk = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, {
+            acceptNode: (node) => node.parentNode === el ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP
+          });
+          let tn: Text | null;
+          while ((tn = walk.nextNode() as Text | null)) {
+            segments.push({ node: tn, full: tn.textContent || '' });
+            tn.textContent = '';
+          }
+        }
+      });
+
+      // Flatten to char queue
+      const chars: { seg: number; char: string }[] = [];
+      segments.forEach((s, si) => {
+        for (const ch of s.full) chars.push({ seg: si, char: ch });
+      });
+
+      // Add cursor at end of p
+      const cursor = document.createElement('span');
+      cursor.className = 'typing-cursor';
+      cursor.textContent = '█';
+      p.appendChild(cursor);
+
+      let ci = 0;
+      const tick = () => {
+        if (ci < chars.length) {
+          const c = chars[ci];
+          segments[c.seg].node.textContent += c.char;
+          ci++;
+          setTimeout(tick, speed);
+        } else {
+          cursor.remove();
+          resolve();
+        }
+      };
+      tick();
+    });
+  }
+
+  function flashSuccess(p: HTMLElement) {
+    const check = p.querySelector('.t-ok-char');
+    if (check) {
+      (check as HTMLElement).classList.add('flash-green');
+      setTimeout(() => (check as HTMLElement).classList.remove('flash-green'), 400);
+    }
+  }
+
+  function updateProgress(progress: number) {
+    const bar = document.getElementById('term-progress');
+    if (bar) bar.style.width = progress + '%';
+  }
+
+  async function runAnimation() {
     if (hasPlayed) return;
     hasPlayed = true;
 
     const output = document.getElementById('terminal-output');
-    if (!output) return;
+    const termEl = document.getElementById('hero-terminal');
+    if (!output || !termEl) return;
     output.innerHTML = '';
+    successLineEls.length = 0;
 
-    lines.forEach(({ text, delay, cls }) => {
-      setTimeout(() => {
-        const p = document.createElement('p');
-        if (text === '') {
-          p.innerHTML = '&nbsp;';
-        } else {
-          const className = classMap[cls] || '';
-          if (cls === 'cmd') {
-            const parts = text.split(' ');
-            const dollar = parts.shift();
-            p.innerHTML = `<span class="t-dim">${dollar}</span> <span class="t-cmd">${parts.join(' ')}</span>`;
-          } else if (cls === 'warn') {
-            p.innerHTML = `<span class="t-warn">⚠</span> <span class="t-danger">${text.replace('⚠ ', '')}</span>`;
-          } else if (cls === 'ok') {
-            p.innerHTML = `<span class="t-ok">✓</span> <span>${text.replace('✓ ', '')}</span>`;
-          } else {
-            p.className = className;
-            p.textContent = text;
-          }
-        }
-        output.appendChild(p);
-        output.scrollTop = output.scrollHeight;
-      }, delay);
-    });
+    // Phase 1: initial blinking cursor
+    const initCursor = document.createElement('p');
+    initCursor.className = 'term-line';
+    const ic = document.createElement('span');
+    ic.className = 'typing-cursor';
+    ic.textContent = '█';
+    initCursor.appendChild(ic);
+    output.appendChild(initCursor);
+    await wait(500);
+    initCursor.remove();
 
-    setTimeout(() => {
-      const cursor = document.createElement('p');
-      cursor.className = 'cursor mono';
-      cursor.textContent = '█';
-      output?.appendChild(cursor);
-    }, 6200);
+    const totalLines = LINES.length;
+
+    for (let li = 0; li < totalLines; li++) {
+      const line = LINES[li];
+      const p = buildLine(line);
+      output.appendChild(p);
+      p.classList.add('term-active');
+
+      updateProgress(((li + 0.5) / totalLines) * 100);
+
+      if (line.type === 'blank') {
+        // Just show empty line
+      } else if (line.type === 'command') {
+        await typeChars(p, 35);
+        // Brief cursor blink pause after command
+        const blinkCursor = document.createElement('span');
+        blinkCursor.className = 'typing-cursor';
+        blinkCursor.textContent = '█';
+        p.appendChild(blinkCursor);
+        await wait(300);
+        blinkCursor.remove();
+      } else if (line.type === 'output') {
+        await typeChars(p, 20);
+      } else if (line.type === 'success') {
+        // Appears instantly
+        flashSuccess(p);
+        successLineEls.push(p);
+      } else if (line.type === 'alert') {
+        // Types character by character
+        await typeChars(p, 25);
+        // Red glow pulse on the line
+        p.classList.add('alert-flash');
+        // Terminal border + shadow flash
+        termEl.classList.add('term-alert');
+        // Screen shake
+        termEl.classList.add('term-shake');
+        setTimeout(() => termEl.classList.remove('term-shake'), 200);
+        setTimeout(() => {
+          termEl.classList.remove('term-alert');
+          p.classList.remove('alert-flash');
+        }, 500);
+      } else if (line.type === 'detail') {
+        // Appears instantly (already built)
+      }
+
+      p.classList.remove('term-active');
+      p.classList.add('typed');
+      output.scrollTop = output.scrollHeight;
+
+      updateProgress(((li + 1) / totalLines) * 100);
+
+      if (line.delay > 0) await wait(line.delay);
+    }
+
+    // File ref brief underline
+    const fileRef = output.querySelector('.t-file-ref') as HTMLElement;
+    if (fileRef) {
+      fileRef.classList.add('file-flash');
+      setTimeout(() => fileRef.classList.remove('file-flash'), 800);
+    }
+
+    // Final blinking cursor
+    const finalCursor = document.createElement('p');
+    finalCursor.className = 'term-line';
+    const fc = document.createElement('span');
+    fc.className = 'cursor mono';
+    fc.textContent = '█';
+    finalCursor.appendChild(fc);
+    output.appendChild(finalCursor);
+
+    // Fade out progress bar
+    const bar = document.getElementById('term-progress');
+    if (bar) bar.classList.add('term-progress-done');
+
+    // Enter idle state
+    termEl.classList.add('term-idle');
+
+    // Phase 3: idle health-check flashes
+    setInterval(() => {
+      if (successLineEls.length === 0) return;
+      const idx = Math.floor(Math.random() * successLineEls.length);
+      const el = successLineEls[idx];
+      const check = el.querySelector('.t-ok-char') as HTMLElement;
+      if (check) {
+        check.classList.add('flash-green');
+        setTimeout(() => check.classList.remove('flash-green'), 400);
+      }
+    }, 8000 + Math.random() * 2000);
+  }
+
+  function showAllImmediate() {
+    const output = document.getElementById('terminal-output');
+    if (!output || hasPlayed) return;
+    hasPlayed = true;
+    output.innerHTML = '';
+    for (const line of LINES) {
+      const p = buildLine(line);
+      p.classList.add('typed');
+      output.appendChild(p);
+      if (line.type === 'success') successLineEls.push(p);
+    }
+    const finalCursor = document.createElement('p');
+    finalCursor.className = 'term-line';
+    const fc = document.createElement('span');
+    fc.className = 'cursor mono';
+    fc.textContent = '█';
+    finalCursor.appendChild(fc);
+    output.appendChild(finalCursor);
+    const bar = document.getElementById('term-progress');
+    if (bar) bar.style.display = 'none';
   }
 
   const terminal = document.getElementById('hero-terminal');
   if (terminal) {
-    const observer = new IntersectionObserver((entries) => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const termObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          runAnimation();
-          observer.disconnect();
+          prefersReduced ? showAllImmediate() : runAnimation();
+          termObserver.disconnect();
         }
       });
-    }, { threshold: 0.3 });
-    observer.observe(terminal);
+    }, { threshold: 0.5 });
+    termObserver.observe(terminal);
   }
+
+  // --- Scroll-triggered reveal animations ---
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // --- Hero grid-bg ambient spotlight ---
+    const hero = document.querySelector('.hero.grid-bg') as HTMLElement;
+    if (hero) {
+      hero.addEventListener('mousemove', (e: MouseEvent) => {
+        const rect = hero.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        hero.style.setProperty('--mouse-x', x + '%');
+        hero.style.setProperty('--mouse-y', y + '%');
+      });
+    }
+
+    // --- Feature card hover glow ---
+    document.querySelectorAll('.feature-card').forEach(card => {
+      card.addEventListener('mousemove', (e: Event) => {
+        const me = e as MouseEvent;
+        const el = card as HTMLElement;
+        const rect = el.getBoundingClientRect();
+        el.style.setProperty('--card-mouse-x', (me.clientX - rect.left) + 'px');
+        el.style.setProperty('--card-mouse-y', (me.clientY - rect.top) + 'px');
+      });
+    });
+
+    // --- Stat count-up animation ---
+    const countEl = document.querySelector('[data-count-to]') as HTMLElement;
+    if (countEl) {
+      const target = parseInt(countEl.dataset.countTo || '0', 10);
+      const suffix = countEl.dataset.countSuffix || '';
+      let counted = false;
+      const countObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !counted) {
+            counted = true;
+            countObserver.disconnect();
+            const duration = 1500;
+            const start = performance.now();
+            const step = (now: number) => {
+              const elapsed = now - start;
+              const progress = Math.min(elapsed / duration, 1);
+              const eased = 1 - Math.pow(1 - progress, 3);
+              countEl.textContent = Math.floor(eased * target) + suffix;
+              if (progress < 1) requestAnimationFrame(step);
+            };
+            requestAnimationFrame(step);
+          }
+        });
+      }, { threshold: 0.5 });
+      countObserver.observe(countEl);
+    }
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('revealed'));
+    const countEl = document.querySelector('[data-count-to]') as HTMLElement;
+    if (countEl) {
+      countEl.textContent = (countEl.dataset.countTo || '0') + (countEl.dataset.countSuffix || '');
+    }
+  }
+
+  // --- Particle network canvas ---
+  (function() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.innerWidth < 768) return;
+
+    const canvas = document.getElementById('particle-network') as HTMLCanvasElement;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    let width: number, height: number;
+    let mouseX = -1000, mouseY = -1000;
+    const PARTICLE_COUNT = 55;
+    const HUB_COUNT = 5;
+    const CONNECTION_DIST = 150;
+    const MOUSE_RADIUS = 200;
+
+    interface Particle {
+      x: number; y: number;
+      vx: number; vy: number;
+      size: number; opacity: number;
+    }
+
+    const particles: Particle[] = [];
+
+    function resize() {
+      const hero = canvas.parentElement;
+      if (!hero) return;
+      const rect = hero.getBoundingClientRect();
+      width = canvas.width = rect.width;
+      height = canvas.height = rect.height;
+    }
+
+    function createParticles() {
+      particles.length = 0;
+      for (let i = 0; i < PARTICLE_COUNT + HUB_COUNT; i++) {
+        const isHub = i >= PARTICLE_COUNT;
+        particles.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: (Math.random() - 0.5) * 0.4,
+          vy: (Math.random() - 0.5) * 0.4,
+          size: isHub ? Math.random() * 1.5 + 2.5 : Math.random() * 2 + 1,
+          opacity: isHub ? Math.random() * 0.25 + 0.45 : Math.random() * 0.5 + 0.2,
+        });
+      }
+    }
+
+    function animate() {
+      ctx!.clearRect(0, 0, width, height);
+
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+
+        const dx = mouseX - p.x;
+        const dy = mouseY - p.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < MOUSE_RADIUS && dist > 0) {
+          const force = (MOUSE_RADIUS - dist) / MOUSE_RADIUS * 0.02;
+          p.vx += dx / dist * force;
+          p.vy += dy / dist * force;
+        }
+
+        p.vx *= 0.99;
+        p.vy *= 0.99;
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < 0 || p.x > width) p.vx *= -1;
+        if (p.y < 0 || p.y > height) p.vy *= -1;
+        p.x = Math.max(0, Math.min(width, p.x));
+        p.y = Math.max(0, Math.min(height, p.y));
+
+        ctx!.beginPath();
+        ctx!.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx!.fillStyle = `rgba(0, 212, 255, ${p.opacity})`;
+        ctx!.fill();
+      }
+
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < CONNECTION_DIST) {
+            const opacity = (1 - dist / CONNECTION_DIST) * 0.15;
+            ctx!.beginPath();
+            ctx!.moveTo(particles[i].x, particles[i].y);
+            ctx!.lineTo(particles[j].x, particles[j].y);
+            ctx!.strokeStyle = `rgba(0, 212, 255, ${opacity})`;
+            ctx!.lineWidth = 0.5;
+            ctx!.stroke();
+          }
+        }
+      }
+
+      requestAnimationFrame(animate);
+    }
+
+    const hero = canvas.parentElement;
+    if (hero) {
+      hero.addEventListener('mousemove', (e: MouseEvent) => {
+        const rect = hero.getBoundingClientRect();
+        mouseX = e.clientX - rect.left;
+        mouseY = e.clientY - rect.top;
+      });
+      hero.addEventListener('mouseleave', () => {
+        mouseX = -1000;
+        mouseY = -1000;
+      });
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+    createParticles();
+    animate();
+  })();
 </script>
 
 <style>
@@ -327,6 +769,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   overflow: hidden;
 }
 
+#particle-network {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
 .hero-glow {
   position: absolute;
   top: 20%;
@@ -336,6 +788,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   height: 600px;
   background: radial-gradient(ellipse, rgba(0, 102, 255, 0.12) 0%, transparent 70%);
   pointer-events: none;
+  z-index: 0;
 }
 
 .hero-inner {
@@ -345,9 +798,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   align-items: center;
   padding-top: 4rem;
   padding-bottom: 4rem;
+  position: relative;
+  z-index: 2;
 }
 
-.hero-content { z-index: 1; }
+.hero-content { z-index: 2; }
 
 .hero-title {
   font-size: clamp(3.5rem, 6vw, 5.5rem);
@@ -356,6 +811,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 }
 
 .hero-title .accent { color: var(--accent); }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
 
 .hero-sub {
   color: var(--text-muted);
@@ -389,6 +856,62 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   border: 1px solid var(--border-glow);
   box-shadow: 0 0 60px rgba(0, 102, 255, 0.1), inset 0 0 30px rgba(0, 0, 0, 0.5);
   overflow: hidden;
+  position: relative;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.terminal::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 212, 255, 0.025) 2px,
+    rgba(0, 212, 255, 0.025) 3px
+  );
+  pointer-events: none;
+  z-index: 3;
+}
+
+.terminal.term-idle {
+  animation: termIdlePulse 4s ease-in-out infinite;
+}
+
+@keyframes termIdlePulse {
+  0%, 100% { box-shadow: 0 0 60px rgba(0, 102, 255, 0.05), inset 0 0 30px rgba(0, 0, 0, 0.5); }
+  50% { box-shadow: 0 0 60px rgba(0, 102, 255, 0.15), inset 0 0 30px rgba(0, 0, 0, 0.5); }
+}
+
+.terminal.term-alert {
+  border-color: rgba(255, 51, 102, 0.6) !important;
+  box-shadow: 0 0 30px rgba(255, 51, 102, 0.2), 0 0 60px rgba(0, 102, 255, 0.1), inset 0 0 30px rgba(0, 0, 0, 0.5) !important;
+  animation: none;
+}
+
+.terminal.term-shake {
+  animation: termShake 0.2s ease-in-out;
+}
+@keyframes termShake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-2px); }
+  40% { transform: translateX(2px); }
+  60% { transform: translateX(-2px); }
+  80% { transform: translateX(1px); }
+}
+
+/* Progress bar */
+.term-progress {
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent), #0066ff);
+  transition: width 0.4s ease-out, opacity 1s ease;
+  position: relative;
+  z-index: 4;
+}
+.term-progress-done {
+  opacity: 0;
 }
 
 .terminal-bar {
@@ -398,6 +921,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   padding: 0.75rem 1rem;
   background: #080e1c;
   border-bottom: 1px solid var(--border);
+  position: relative;
+  z-index: 2;
 }
 
 .dot {
@@ -419,19 +944,61 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   font-size: 0.82rem;
   line-height: 2;
   min-height: 320px;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 0 8px rgba(0, 212, 255, 0.12);
 }
 .terminal-body p { margin: 0; }
 
+/* Line states */
+.term-line {
+  opacity: 1;
+  background: transparent;
+  transition: background 0.3s ease;
+}
+.term-line.term-active {
+  background: linear-gradient(90deg, rgba(0, 212, 255, 0.05) 0%, transparent 60%);
+}
+
+/* Token colors */
 .t-dim { color: var(--text-dim); }
+.t-muted { color: var(--text-muted); }
+.t-prompt { color: var(--accent); }
 .t-cmd { color: var(--accent); }
-.t-addr { color: #7dd3fc; }
-.t-ok { color: var(--success); }
-.t-warn { color: #fbbf24; }
+.t-ok-char { color: #00ff88; transition: text-shadow 0.3s ease; }
+.t-warn-icon { color: #fbbf24; }
 .t-danger { color: var(--danger); font-weight: 700; }
 
+.t-file-ref {
+  color: var(--accent);
+  text-decoration: none;
+  transition: text-decoration 0.3s ease;
+}
+.t-file-ref.file-flash {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Typing cursor */
+.typing-cursor {
+  color: var(--accent);
+  animation: blink 1s step-end infinite;
+}
+
+/* Final idle cursor */
 .cursor {
   color: var(--accent);
   animation: blink 1s step-end infinite;
+}
+
+/* Success checkmark flash */
+.flash-green {
+  text-shadow: 0 0 12px rgba(0, 255, 136, 0.8), 0 0 4px rgba(0, 255, 136, 0.4) !important;
+}
+
+/* Alert line red flash */
+.alert-flash {
+  text-shadow: 0 0 20px rgba(255, 51, 102, 0.8) !important;
 }
 
 /* HOW IT WORKS */
@@ -713,16 +1280,234 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 @media (max-width: 1024px) {
   .features-grid { grid-template-columns: repeat(2, 1fr); }
   .use-cases-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-inner { gap: 2.5rem; }
+  .how-it-works { padding: 5rem 0; }
+  .hiw-steps { margin-bottom: 3rem; }
 }
 
 @media (max-width: 768px) {
-  .hero-inner { grid-template-columns: 1fr; }
-  .hero-visual { display: none; }
-  .features-grid { grid-template-columns: 1fr; }
-  .use-cases-grid { grid-template-columns: 1fr; }
+  #particle-network { display: none; }
+  .hero { min-height: auto; padding-top: 70px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 2rem; padding-top: 2.5rem; padding-bottom: 2.5rem; }
+  .hero-visual { order: -1; }
+  .terminal-body { min-height: 240px; padding: 1rem; font-size: 0.75rem; }
+  .terminal { max-width: 100%; overflow: hidden; }
+  .hero-title { font-size: clamp(2.5rem, 7vw, 4rem); }
+  .hero-sub { font-size: 1rem; margin-bottom: 2rem; }
+  .hero-actions { margin-bottom: 2.5rem; }
   .hero-stats { gap: 1.25rem; flex-wrap: wrap; }
-  .hiw-steps { flex-direction: column; align-items: center; }
-  .hiw-connector { width: 1px; height: 40px; margin: 0; }
+  .stat-divider { display: none; }
+
+  .how-it-works { padding: 3.5rem 0; }
+  .hiw-steps { flex-direction: column; align-items: center; margin-bottom: 2.5rem; }
+  .hiw-step { padding: 1.25rem 1rem; max-width: 100%; }
+  .hiw-connector { width: 1px; height: 30px; margin: 0; }
   .hiw-connector::after { right: -12px; top: auto; bottom: -4px; }
+
+  .hiw-demo { max-width: 100%; }
+  .chat-messages { padding: 1rem; }
+  .bot-response { font-size: 0.7rem; line-height: 1.7; overflow-x: auto; }
+
+  .context-items { font-size: 0.82rem; gap: 0.75rem; }
+
+  .features-grid { grid-template-columns: 1fr; }
+  .feature-card { padding: 1.75rem 1.5rem; }
+  .feature-card p { font-size: 0.85rem; }
+
+  .use-cases-grid { grid-template-columns: 1fr; }
+  .use-case-card { padding: 1.75rem 1.25rem; }
+}
+
+@media (max-width: 480px) {
+  .hero-inner { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+  .hero-title { font-size: clamp(2rem, 8vw, 3rem); margin-bottom: 1rem; }
+  .hero-sub { font-size: 0.92rem; }
+  .hero-stats { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .stat { flex-direction: row; gap: 0.75rem; align-items: baseline; }
+  .stat-val { font-size: 1.1rem; }
+
+  .terminal-body { font-size: 0.68rem; min-height: auto; padding: 0.875rem; line-height: 1.8; }
+  .terminal-bar { padding: 0.5rem 0.75rem; }
+  .terminal-title { font-size: 0.65rem; }
+
+  .hiw-step h3 { font-size: 1rem; }
+  .hiw-step p { font-size: 0.82rem; }
+
+  .chat-bubble { padding: 0.75rem 1rem; font-size: 0.82rem; }
+  .bot-response { font-size: 0.65rem; }
+
+  .context-items { font-size: 0.78rem; }
+  .context-items .sep { display: none; }
+
+  .feature-card { padding: 1.25rem; }
+  .feature-card h3 { font-size: 0.95rem; }
+  .feature-card p { font-size: 0.82rem; margin-bottom: 1rem; }
+
+  .use-case-card { padding: 1.25rem 1rem; }
+  .use-case-card h3 { font-size: 0.92rem; }
+  .use-case-card p { font-size: 0.82rem; }
+
+  .cta-inner h2 { font-size: clamp(1.5rem, 5vw, 2.25rem); }
+  .cta-inner p { font-size: 0.9rem; }
+}
+
+@media (max-width: 320px) {
+  .hero-title { font-size: 1.75rem; }
+  .hero-visual { display: none; }
+  .context-items span { font-size: 0.72rem; }
+}
+
+/* ========== SCROLL REVEAL SYSTEM ========== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-stagger > .reveal:nth-child(1) { transition-delay: 0ms; }
+.reveal-stagger > .reveal:nth-child(2) { transition-delay: 100ms; }
+.reveal-stagger > .reveal:nth-child(3) { transition-delay: 200ms; }
+.reveal-stagger > .reveal:nth-child(4) { transition-delay: 300ms; }
+.reveal-stagger > .reveal:nth-child(5) { transition-delay: 400ms; }
+.reveal-stagger > .reveal:nth-child(6) { transition-delay: 500ms; }
+
+/* ========== HERO ENTRANCE (page load, not scroll) ========== */
+.hero .tag {
+  animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+.hero .hero-title {
+  animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+.hero .hero-sub {
+  animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
+}
+.hero .hero-actions {
+  animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.45s both;
+}
+.hero .hero-stats {
+  animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both;
+}
+.hero .terminal {
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+}
+
+/* ========== AMBIENT GRID SPOTLIGHT ========== */
+.hero.grid-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    ellipse 600px 400px at var(--mouse-x, 50%) var(--mouse-y, 30%),
+    rgba(0, 212, 255, 0.03) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 1;
+  transition: background 0.3s ease;
+}
+
+/* ========== FEATURE CARD HOVER GLOW ========== */
+.feature-card {
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: var(--card-mouse-y, 50%);
+  left: var(--card-mouse-x, 50%);
+  width: 300px;
+  height: 300px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.feature-card:hover::before {
+  opacity: 1;
+}
+.feature-card:hover {
+  border-color: rgba(0, 212, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* ========== SECTION DIVIDERS — SHIMMER GRADIENT ========== */
+.how-it-works::before,
+.features-preview::before,
+.use-cases-preview::before,
+.cta-section::before {
+  content: '';
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-dim, rgba(0, 212, 255, 0.15)), var(--border-glow), var(--accent-dim, rgba(0, 212, 255, 0.15)), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ========== HEADING GRADIENT SHIMMER ========== */
+.section-h2 {
+  background: linear-gradient(
+    90deg,
+    var(--text) 0%,
+    var(--text) 40%,
+    rgba(255, 255, 255, 0.95) 50%,
+    var(--text) 60%,
+    var(--text) 100%
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShimmer 6s ease-in-out infinite;
+}
+@keyframes textShimmer {
+  0%, 100% { background-position: 100% 0; }
+  50% { background-position: 0% 0; }
+}
+
+/* ========== REDUCED MOTION ========== */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .hero .tag,
+  .hero .hero-title,
+  .hero .hero-sub,
+  .hero .hero-actions,
+  .hero .hero-stats,
+  .hero .terminal {
+    animation: none;
+  }
+  .section-h2 {
+    animation: none;
+    -webkit-text-fill-color: var(--text);
+    background: none;
+  }
+  .how-it-works::before,
+  .features-preview::before,
+  .use-cases-preview::before,
+  .cta-section::before {
+    animation: none;
+    background-size: 100% 100%;
+  }
+  .hero.grid-bg::before,
+  #particle-network {
+    display: none;
+  }
 }
 </style>

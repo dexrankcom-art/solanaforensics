@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="About — SolanaForensics" description="SolanaForensics is a Clavestra Intel product providing forensic-grade blockchain intelligence for the Solana network.">
+<BaseLayout title="About — SolanaForensics" description="SolanaForensics is a Clavestra Intel forensic intelligence product for Solana. Built by investigators for law enforcement and compliance teams.">
 
   <div style="height: 70px;"></div>
 
@@ -19,7 +19,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="about-text">
         <h2>Our Background</h2>
         <p>SolanaForensics emerged from active forensic investigations into Solana-based fraud and investment scams. The tools were forged in the field — not built speculatively. Every capability was developed to solve a real investigative problem: tracing fund flows across complex DeFi interactions, reverse-engineering custodial platforms to expose hidden admin capabilities, and generating law-enforcement-ready reports that meet evidential standards.</p>
-        <p>Now delivered as a Telegram bot, SolanaForensics gives investigators direct access to forensic intelligence without dashboards or onboarding. The bot is informed by work submitted to law enforcement agencies and financial intelligence units. Every module reflects an actual investigative need encountered in the field.</p>
+        <p>Now delivered as a Telegram-based forensic intelligence agent, SolanaForensics gives investigators direct access to forensic intelligence without dashboards or onboarding. The agent is informed by work submitted to law enforcement agencies and financial intelligence units. Every module reflects an actual investigative need encountered in the field.</p>
         <h2 style="margin-top: 3rem;">Clavestra Intel</h2>
         <p>SolanaForensics is a product of <a href="https://clavestra.com" target="_blank" rel="noopener"><strong style="color:var(--accent)">Clavestra Intel</strong></a>, a blockchain intelligence operation focused on on-chain forensics and financial crime investigation on distributed ledger networks. Clavestra Intel specialises in complex, multi-jurisdictional cases involving Solana-native protocols, DeFi platforms, and cross-chain asset flows.</p>
         <p>Our work spans blockchain forensics, corporate registry research, smart contract analysis, and the production of professional intelligence reports for law enforcement and legal proceedings.</p>
@@ -150,7 +150,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 }
 
 @media (max-width: 900px) {
-  .about-grid { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
   .principles-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+
+@media (max-width: 768px) {
+  .page-hero { padding: 4rem 0 3rem; }
+  .page-hero h1 { font-size: clamp(1.75rem, 5vw, 3rem); }
+  .page-hero-sub { font-size: 0.95rem; }
+  .about-grid { padding: 3.5rem 0; gap: 2.5rem; }
+  .about-text h2 { font-size: 1.25rem; }
+  .about-text p { font-size: 0.9rem; }
+  .sidebar-list li { font-size: 0.82rem; }
+  .principles-grid h3 { font-size: 0.95rem; }
+  .principles-grid p { font-size: 0.85rem; }
+}
+
+@media (max-width: 480px) {
+  .page-hero { padding: 3rem 0 2rem; }
+  .about-grid { padding: 2.5rem 0; gap: 2rem; }
+  .principles-grid { gap: 2rem; }
 }
 </style>

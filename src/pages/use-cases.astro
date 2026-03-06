@@ -2,39 +2,79 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Use Cases — SolanaForensics" description="How law enforcement, compliance teams, fraud investigators, and legal professionals use SolanaForensics.">
+<BaseLayout title="Use Cases — SolanaForensics" description="How law enforcement, compliance teams, and fraud investigators use SolanaForensics for Solana wallet tracing and forensic evidence reporting.">
 
   <div style="height: 70px;"></div>
 
   <section class="page-hero grid-bg">
-    <div class="container">
-      <div class="tag">// Use Cases</div>
-      <h1>Deployed across <span class="accent">investigation verticals.</span></h1>
-      <p class="page-hero-sub">SolanaForensics serves professionals who need evidentiary-grade blockchain intelligence.</p>
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <div class="tag">// Use Cases</div>
+        <h1>Deployed across <span class="accent">investigation verticals.</span></h1>
+        <p class="page-hero-sub">SolanaForensics serves professionals who need evidentiary-grade blockchain intelligence.</p>
+        <a href="https://t.me/solanaforensics_bot" target="_blank" rel="noopener noreferrer" class="btn btn-primary hero-cta">Start Investigating →</a>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg class="node-graph" viewBox="0 0 320 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="80" y1="60" x2="200" y2="40" stroke="var(--accent)" stroke-width="1" opacity="0.25"/>
+          <line x1="200" y1="40" x2="260" y2="120" stroke="var(--accent)" stroke-width="1" opacity="0.25"/>
+          <line x1="80" y1="60" x2="60" y2="160" stroke="var(--accent)" stroke-width="1" opacity="0.25"/>
+          <line x1="60" y1="160" x2="160" y2="200" stroke="var(--accent)" stroke-width="1" opacity="0.2"/>
+          <line x1="160" y1="200" x2="260" y2="120" stroke="var(--accent)" stroke-width="1" opacity="0.2"/>
+          <line x1="200" y1="40" x2="160" y2="200" stroke="var(--accent)" stroke-width="0.75" opacity="0.15" stroke-dasharray="4 4"/>
+          <line x1="260" y1="120" x2="240" y2="240" stroke="var(--accent)" stroke-width="1" opacity="0.2"/>
+          <line x1="160" y1="200" x2="240" y2="240" stroke="var(--accent)" stroke-width="0.75" opacity="0.15"/>
+          <line x1="80" y1="60" x2="160" y2="200" stroke="var(--accent)" stroke-width="0.75" opacity="0.1" stroke-dasharray="4 4"/>
+          <circle cx="80" cy="60" r="8" fill="var(--bg-card)" stroke="var(--accent)" stroke-width="1.5" class="node node-1"/>
+          <circle cx="80" cy="60" r="3" fill="var(--accent)" class="node-dot node-1"/>
+          <circle cx="200" cy="40" r="10" fill="var(--bg-card)" stroke="var(--accent)" stroke-width="1.5" class="node node-2"/>
+          <circle cx="200" cy="40" r="4" fill="var(--danger)" class="node-dot node-2"/>
+          <circle cx="260" cy="120" r="7" fill="var(--bg-card)" stroke="var(--accent)" stroke-width="1.5" class="node node-3"/>
+          <circle cx="260" cy="120" r="3" fill="var(--accent)" class="node-dot node-3"/>
+          <circle cx="60" cy="160" r="6" fill="var(--bg-card)" stroke="var(--accent)" stroke-width="1" class="node node-4"/>
+          <circle cx="60" cy="160" r="2.5" fill="var(--accent)" class="node-dot node-4"/>
+          <circle cx="160" cy="200" r="9" fill="var(--bg-card)" stroke="var(--accent)" stroke-width="1.5" class="node node-5"/>
+          <circle cx="160" cy="200" r="3.5" fill="var(--accent)" class="node-dot node-5"/>
+          <circle cx="240" cy="240" r="6" fill="var(--bg-card)" stroke="var(--accent)" stroke-width="1" class="node node-6"/>
+          <circle cx="240" cy="240" r="2.5" fill="var(--success)" class="node-dot node-6"/>
+          <text x="200" y="18" fill="var(--danger)" font-family="var(--mono)" font-size="8" text-anchor="middle" opacity="0.6">FLAGGED</text>
+          <text x="240" y="265" fill="var(--success)" font-family="var(--mono)" font-size="7" text-anchor="middle" opacity="0.5">CEX KYC</text>
+          <text x="45" y="55" fill="var(--accent)" font-family="var(--mono)" font-size="7" opacity="0.4">SRC</text>
+        </svg>
+      </div>
     </div>
   </section>
 
-  <section>
+  <section class="uc-sections">
     <div class="container">
 
       <div class="uc-block" id="law-enforcement">
         <div class="uc-label">
-          <span class="mono" style="color:var(--accent)">// 01</span>
+          <span class="mono uc-num">// 01</span>
           <h2>Law Enforcement</h2>
         </div>
         <div class="uc-content">
           <p>Police forces and financial crime units need blockchain evidence that meets courtroom standards. SolanaForensics provides a full forensic chain of custody, structured reports aligned with law enforcement submission formats, and real-time monitoring tools for active investigations.</p>
           <div class="uc-scenarios">
             <div class="scenario card">
-              <h4>Crypto Fraud Investigations</h4>
+              <h4>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                Crypto Fraud Investigations
+              </h4>
               <p>Trace funds from victim wallets to exchange accounts, identify withdrawal points for KYC requests, and build a complete evidence package for arrest warrants.</p>
             </div>
             <div class="scenario card">
-              <h4>Investment Scam Takedowns</h4>
+              <h4>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                Investment Scam Takedowns
+              </h4>
               <p>Map the full financial structure of fraudulent investment platforms — identify operators, trace fund extraction patterns, and quantify total victim losses.</p>
             </div>
             <div class="scenario card">
-              <h4>Money Laundering Cases</h4>
+              <h4>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                Money Laundering Cases
+              </h4>
               <p>Document layering techniques used to obscure criminal proceeds and present them in formats suitable for prosecution.</p>
             </div>
           </div>
@@ -43,22 +83,31 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <div class="uc-block" id="compliance">
         <div class="uc-label">
-          <span class="mono" style="color:var(--accent)">// 02</span>
+          <span class="mono uc-num">// 02</span>
           <h2>Compliance & AML</h2>
         </div>
         <div class="uc-content">
           <p>Financial intelligence units and compliance teams need automated tools to detect suspicious on-chain activity and generate Suspicious Activity Reports (SARs) and FIAU submissions efficiently.</p>
           <div class="uc-scenarios">
             <div class="scenario card">
-              <h4>SAR Generation</h4>
+              <h4>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></svg>
+                SAR Generation
+              </h4>
               <p>Automatically generate Suspicious Activity Reports with full transaction evidence and risk scoring for regulatory bodies.</p>
             </div>
             <div class="scenario card">
-              <h4>Counterparty Risk Assessment</h4>
+              <h4>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></svg>
+                Counterparty Risk Assessment
+              </h4>
               <p>Assess the risk profile of counterparties before transacting, based on wallet history and network associations.</p>
             </div>
             <div class="scenario card">
-              <h4>Travel Rule Compliance</h4>
+              <h4>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></svg>
+                Travel Rule Compliance
+              </h4>
               <p>Identify and document originator and beneficiary information for VASP-to-VASP transactions above threshold amounts.</p>
             </div>
           </div>
@@ -67,22 +116,31 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <div class="uc-block" id="fraud">
         <div class="uc-label">
-          <span class="mono" style="color:var(--accent)">// 03</span>
+          <span class="mono uc-num">// 03</span>
           <h2>Fraud Investigation</h2>
         </div>
         <div class="uc-content">
           <p>Private fraud investigators, corporate security teams, and forensic accountants use SolanaForensics to reconstruct complex fraud schemes and identify the individuals who benefited.</p>
           <div class="uc-scenarios">
             <div class="scenario card">
-              <h4>Exit Scam Analysis</h4>
+              <h4>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                Exit Scam Analysis
+              </h4>
               <p>Reconstruct the timeline and mechanics of rug pulls and exit scams, identify founders' wallets, and quantify proceeds extracted from investors.</p>
             </div>
             <div class="scenario card">
-              <h4>DeFi Exploit Tracing</h4>
+              <h4>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                DeFi Exploit Tracing
+              </h4>
               <p>Trace exploit proceeds from flash loan attacks and protocol exploits through DEXes and bridges to final destinations.</p>
             </div>
             <div class="scenario card">
-              <h4>Insider Trading Detection</h4>
+              <h4>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                Insider Trading Detection
+              </h4>
               <p>Identify wallets with foreknowledge of token launches or protocol exploits based on pre-event positioning patterns.</p>
             </div>
           </div>
@@ -91,22 +149,31 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <div class="uc-block" id="legal">
         <div class="uc-label">
-          <span class="mono" style="color:var(--accent)">// 04</span>
+          <span class="mono uc-num">// 04</span>
           <h2>Legal & Asset Recovery</h2>
         </div>
         <div class="uc-content">
           <p>Legal counsel and asset recovery specialists use our platform to build blockchain evidence packages for civil litigation, freezing orders, and victim restitution proceedings.</p>
           <div class="uc-scenarios">
             <div class="scenario card">
-              <h4>Asset Freezing Orders</h4>
+              <h4>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>
+                Asset Freezing Orders
+              </h4>
               <p>Identify and document wallet addresses holding misappropriated assets to support injunction applications and preservation orders.</p>
             </div>
             <div class="scenario card">
-              <h4>Victim Restitution</h4>
+              <h4>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>
+                Victim Restitution
+              </h4>
               <p>Identify recoverable assets still on-chain and prioritise wallets for enforcement action in victim recovery proceedings.</p>
             </div>
             <div class="scenario card">
-              <h4>Litigation Support</h4>
+              <h4>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>
+                Litigation Support
+              </h4>
               <p>Provide expert-witness-ready forensic reports and transaction evidence packages for arbitration and court proceedings.</p>
             </div>
           </div>
@@ -116,21 +183,113 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <section style="background: var(--bg-2); border-top: 1px solid var(--border); padding: 6rem 0; text-align: center;">
-    <div class="container">
+  <section class="bottom-cta">
+    <div class="container bottom-cta-inner">
+      <div class="cta-glow"></div>
       <div class="tag">// Start Investigating</div>
-      <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1.25rem;">Start investigating on Telegram.</h2>
-      <p style="color: var(--text-muted); max-width: 480px; margin: 0 auto 2.5rem;">Open @SolanaForensicsBot and run your first investigation in under 60 seconds.</p>
-      <a href="https://t.me/SolanaForensicsBot" target="_blank" rel="noopener" class="btn btn-primary">Start Investigating →</a>
+      <h2>Start investigating on Telegram.</h2>
+      <p>Open @solanaforensics_bot and run your first investigation in under 60 seconds.</p>
+      <a href="https://t.me/solanaforensics_bot" target="_blank" rel="noopener noreferrer" class="btn btn-primary cta-btn-lg">Start Investigating →</a>
     </div>
   </section>
 
 </BaseLayout>
 
+<script>
+  const blocks = document.querySelectorAll('.uc-block');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('uc-visible');
+        const cards = entry.target.querySelectorAll('.scenario');
+        cards.forEach((card, i) => {
+          (card as HTMLElement).style.transitionDelay = `${i * 150}ms`;
+          card.classList.add('card-visible');
+        });
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  blocks.forEach(block => observer.observe(block));
+</script>
+
 <style>
-.page-hero { padding: 6rem 0 5rem; border-bottom: 1px solid var(--border); }
-.page-hero h1 { font-size: clamp(2.5rem, 4vw, 4rem); max-width: 700px; margin-bottom: 1.25rem; }
-.page-hero-sub { color: var(--text-muted); font-size: 1.05rem; max-width: 540px; line-height: 1.7; }
+/* HERO */
+.page-hero {
+  padding: 5rem 0 2.5rem;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to bottom, rgba(5, 8, 16, 0), var(--bg));
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 3rem;
+  align-items: center;
+}
+
+.page-hero h1 {
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  max-width: 700px;
+  margin-bottom: 1.25rem;
+}
+
+.page-hero-sub {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  max-width: 540px;
+  line-height: 1.7;
+}
+
+.hero-cta {
+  margin-top: 2rem;
+}
+
+.hero-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.node-graph {
+  width: 100%;
+  max-width: 320px;
+  opacity: 0.55;
+}
+
+.node {
+  animation: nodePulse 3s ease-in-out infinite;
+}
+.node-1 { animation-delay: 0s; }
+.node-2 { animation-delay: 0.5s; }
+.node-3 { animation-delay: 1s; }
+.node-4 { animation-delay: 1.5s; }
+.node-5 { animation-delay: 2s; }
+.node-6 { animation-delay: 2.5s; }
+
+@keyframes nodePulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* SECTIONS */
+.uc-sections {
+  padding: 3rem 0 7rem;
+}
 
 .uc-block {
   display: grid;
@@ -138,9 +297,50 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   gap: 5rem;
   padding: 5rem 0;
   border-bottom: 1px solid var(--border);
+  position: relative;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.uc-label span { display: block; margin-bottom: 0.75rem; font-size: 0.78rem; letter-spacing: 0.1em; }
+.uc-block.uc-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.uc-block::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 2px;
+  background: var(--accent);
+  opacity: 0.3;
+}
+
+.uc-block:last-child {
+  border-bottom: none;
+}
+.uc-block:last-child::after {
+  display: none;
+}
+
+/* VISUAL HIERARCHY */
+.uc-label {
+  border-left: 3px solid var(--accent);
+  padding-left: 1.25rem;
+}
+
+.uc-num {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+}
+
 .uc-label h2 { font-size: 1.75rem; }
 
 .uc-content > p {
@@ -151,32 +351,147 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   max-width: 600px;
 }
 
+/* CARDS */
 .uc-scenarios {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--border);
+  gap: 1.25rem;
+  background: transparent;
 }
 
 .scenario {
-  background: var(--bg);
+  background: var(--bg-card);
   padding: 1.75rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.scenario.card-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease, border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.scenario::before {
+  border-radius: 10px 0 0 10px;
+}
+
+.scenario:hover {
+  border-color: rgba(0, 212, 255, 0.3);
+  background: rgba(15, 20, 35, 0.8);
+  box-shadow: 0 0 25px rgba(0, 212, 255, 0.08);
+  transform: translateY(-2px);
 }
 
 .scenario h4 {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
   font-size: 0.9rem;
   margin-bottom: 0.75rem;
   color: var(--text);
 }
 
+.scenario h4 svg {
+  flex-shrink: 0;
+}
+
 .scenario p {
   font-size: 0.83rem;
-  color: var(--text-muted);
+  color: rgb(160, 170, 190);
   line-height: 1.65;
 }
 
+/* BOTTOM CTA */
+.bottom-cta {
+  background: var(--bg-2);
+  border-top: 1px solid var(--border);
+  padding: 6rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.bottom-cta-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 300px;
+  background: radial-gradient(ellipse, rgba(0, 212, 255, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.bottom-cta h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1.25rem;
+}
+
+.bottom-cta p {
+  color: var(--text-muted);
+  max-width: 480px;
+  margin: 0 auto 2.5rem;
+}
+
+.cta-btn-lg {
+  padding: 1.1rem 2.75rem;
+  font-size: 0.9rem;
+  animation: ctaPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes ctaPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 212, 255, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(0, 212, 255, 0.4); }
+}
+
+/* RESPONSIVE */
 @media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-visual { display: none; }
   .uc-block { grid-template-columns: 1fr; gap: 2rem; }
-  .uc-scenarios { grid-template-columns: 1fr; }
+  .uc-scenarios { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .page-hero { padding: 4rem 0 2rem; }
+  .page-hero h1 { font-size: clamp(1.75rem, 5vw, 3rem); }
+  .page-hero-sub { font-size: 0.95rem; }
+  .uc-sections { padding: 2rem 0 3.5rem; }
+  .uc-block { padding: 3rem 0; gap: 1.5rem; }
+  .uc-label h2 { font-size: 1.4rem; }
+  .uc-scenarios { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .scenario { padding: 1.25rem; }
+  .scenario h4 { font-size: 0.85rem; }
+  .scenario p { font-size: 0.8rem; }
+  .bottom-cta { padding: 4rem 0; }
+  .bottom-cta h2 { font-size: clamp(1.5rem, 4vw, 2.25rem); }
+  .cta-btn-lg { padding: 0.875rem 2rem; font-size: 0.82rem; }
+}
+
+@media (max-width: 480px) {
+  .page-hero { padding: 3rem 0 1.5rem; }
+  .uc-sections { padding: 1rem 0 2.5rem; }
+  .uc-block { padding: 2.5rem 0; gap: 1.25rem; }
+  .uc-content > p { font-size: 0.88rem; margin-bottom: 1.5rem; }
+  .uc-scenarios { grid-template-columns: 1fr; gap: 0.875rem; }
+  .scenario { padding: 1.125rem; }
+  .scenario h4 svg { width: 16px; height: 16px; }
+  .bottom-cta { padding: 3rem 0; }
+  .bottom-cta p { font-size: 0.88rem; }
+  .cta-glow { width: 300px; height: 200px; }
+}
+
+@media (max-width: 320px) {
+  .uc-label h2 { font-size: 1.2rem; }
+  .uc-num { font-size: 0.85rem; }
 }
 </style>
