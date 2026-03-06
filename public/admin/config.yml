@@ -6,16 +6,11 @@ media_folder: public/images/uploads
 public_folder: /images/uploads
 
 collections:
-  - name: "blog"
-    label: "Blog Posts"
-    folder: "src/pages/blog"
+  - name: "pages"
+    label: "Pages"
+    folder: "src/content/pages"
     create: true
-    slug: "{{slug}}"
-    extension: "md"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "text" }
-      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
-      - { label: "Category", name: "category", widget: "select", options: ["Analysis", "Intelligence", "Research", "Case Study"] }
-      - { label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/BlogLayout.astro" }
+      - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
